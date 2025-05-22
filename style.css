@@ -237,3 +237,23 @@ footer a:hover {
         padding: 0 15px; /* Reduce container padding */
     }
 }
+
+/* --- Contact Icons Styling --- */
+.contact-icons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex; /* Use flexbox to align icons horizontally */
+    justify-content: center; /* Center the icons */
+    gap: 30px; /* Space between icons */
+}
+
+.contact-icons a {
+    color: #fff; /* White color for icons (since they're in a dark footer) */
+    font-size: 2.5em; /* Make icons larger */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+}
+
+.contact-icons a:hover {
+    color: var(--primary-color); /* Change color on hover to your primary accent */
+    transform: translateY(-5px); /* Slightly lift the icon on hover */
+}
