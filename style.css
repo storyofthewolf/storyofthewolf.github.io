@@ -25,20 +25,22 @@ body {
 
 /* --- Utility Container --- */
 .container {
-    max-width: 1000px; /* Wider content area */
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 0 25px; /* More generous side padding */
+    padding: 0 25px;
+    position: relative; /* Needed for positioning the menu toggle */
 }
 
 /* --- Header --- */
 header {
     background-color: var(--dark-bg);
     color: #fff;
-    padding: 40px 0; /* More vertical padding */
+    padding: 40px 0;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: relative; /* For stacking context */
+    z-index: 100; /* Ensure header is above menu when open */
 }
-
 .profile-pic {
     border-radius: 50%;
     width: 180px; /* Slightly larger profile picture */
@@ -67,35 +69,72 @@ header h1 {
     font-weight: 300; /* Lighter weight */
 }
 
-/* --- Navigation --- */
-nav {
-    background-color: var(--dark-bg); /* Same as header for continuity */
-    padding: 15px 0;
-    text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1); /* Subtle separator */
+/* --- Menu Toggle Button (Mobile) --- */
+.menu-toggle {
+    display: block; /* Show on mobile by default */
+    position: absolute; /* Position it in the top right */
+    top: 20px; /* Adjust as needed */
+    right: 25px; /* Adjust as needed, match container padding */
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8em; /* Size of the hamburger icon */
+    cursor: pointer;
+    z-index: 101; /* Ensure it's above the menu */
+    padding: 10px; /* Make it easier to tap */
+    transition: color 0.3s ease;
 }
 
-nav ul {
+.menu-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* --- Mobile Navigation (Default State - Hidden) --- */
+#main-nav {
+    /* Hide by default, full screen on mobile */
+    display: flex; /* Use flex to center content inside */
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Fixed position relative to viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Full screen height */
+    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    z-index: 99; /* Below header, above main content */
+
+    /* Initially hide the menu off-screen */
+    transform: translateX(100%); /* Move 100% off to the right */
+    transition: transform 0.4s ease-in-out; /* Smooth slide transition */
+}
+
+#main-nav.active { /* Class added by JavaScript when menu is open */
+    transform: translateX(0); /* Slide into view */
+}
+
+#main-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Use flexbox for horizontal navigation */
-    justify-content: center; /* Center items */
-    gap: 30px; /* Space between nav items */
+    display: flex;
+    flex-direction: column; /* Stack nav items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 30px; /* Space between items */
 }
 
-nav ul li a {
+#main-nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 400;
-    font-size: 1.1em;
-    padding: 5px 0;
-    transition: color 0.3s ease; /* Smooth color change on hover */
+    font-size: 1.8em; /* Larger font for menu items */
+    padding: 10px 0;
+    transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-    color: var(--primary-color); /* Highlight on hover */
+#main-nav ul li a:hover {
+    color: var(--primary-color);
 }
+
 
 /* --- Main Sections --- */
 main section {
@@ -257,3 +296,10 @@ footer a:hover {
     color: var(--primary-color); /* Change color on hover to your primary accent */
    /* transform: translateY(-5px); */ /* Slightly lift the icon on hover */
 }
+
+
+
+
+
+/* ... (keep profile-pic, h1, tagline styles) ... */
+

@@ -21,15 +21,18 @@
         }
     </style>
 </head>
+
 <body>
-<header>
+    <header>
         <div class="container"> <img src="your-profile-pic.jpg" alt="Your professional headshot" class="profile-pic">
             <h1>Eric Wolf</h1>
             <p class="tagline">Human | Skier | Giant Schnauzer Wrangler</p>
             <p>Welcome to my personal webpage, clearly, a work in progress</p>
+            <button class="menu-toggle" aria-label="Open navigation menu">
+              <i class="fas fa-bars"></i> </button>
         </div>
     </header>
-<nav>
+   <nav id="main-nav"> <!-- Navigation Menu -->
         <div class="container">
             <ul>
                 <li><a href="#about">About Me</a></li>
@@ -41,6 +44,8 @@
             </ul>
         </div>
     </nav>
+    
+
   <main>
         <section id="about" class="container">
             <h2>About Me</h2>
@@ -98,6 +103,7 @@
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
+<script src="script.js"></script>
     
 </body>
 </html>
