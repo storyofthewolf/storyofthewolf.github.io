@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming soon...</title>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css"> </head>
     <style>
         body {
@@ -31,6 +32,7 @@
         <div class="container">
             <ul>
                 <li><a href="#about">About Me</a></li>
+                <li><a href="#background">Background</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#research">Research Topics</a></li>
                 <li><a href="#code">Supported Code</a></li>
@@ -68,14 +70,21 @@
     </main>
 
     <footer id="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p>Email: <a href="mailto:storyofthewolf@gmail.com">storyofthewolf@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/eric-wolf-15a062169/ target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
-            <p>GitHub: <a href="https://github.com/storyofthewolf" target="_blank" rel="noopener noreferrer">GitHub Profile</a></p>
-            <p>&copy; <span id="2025"></span> Eric Wolf. All rights reserved.</p>
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <div class="contact-icons"> <a href="mailto:storyofthewolf@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/eric-wolf-15a062169/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/storyofthewolf" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                <i class="fab fa-github"></i>
+            </a>
         </div>
-    </footer>
+        <p>&copy; <span id="current-year"></span> Your Full Name. All rights reserved.</p>
+    </div>
+</footer>
 
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
