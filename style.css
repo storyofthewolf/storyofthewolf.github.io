@@ -255,5 +255,5 @@ footer a:hover {
 
 .contact-icons a:hover {
     color: var(--primary-color); /* Change color on hover to your primary accent */
-    transform: translateY(-5px); /* Slightly lift the icon on hover */
+   /* transform: translateY(-5px); */ /* Slightly lift the icon on hover */
 }
