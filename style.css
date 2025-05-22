@@ -1,0 +1,103 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif; /* Use a common font */
+    line-height: 1.6; /* Spacing between lines of text */
+    margin: 0; /* Remove default browser margin */
+    padding: 0; /* Remove default browser padding */
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Dark grey text color */
+}
+
+/* Styles for the main header */
+header {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    padding: 1rem 0; /* Padding top/bottom, 0 left/right */
+    text-align: center; /* Center the text */
+}
+
+header h1 {
+    margin: 0; /* Remove default heading margin */
+    font-size: 2.5em; /* Larger font size for your name */
+}
+
+.tagline { /* Style for elements with class="tagline" */
+    font-size: 1.2em;
+    color: #bbb;
+}
+
+/* Styles for the navigation bar */
+nav {
+    background-color: #444;
+    color: #fff;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none; /* Remove bullet points from lists */
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline; /* Make list items appear in a row */
+    margin: 0 15px; /* Spacing between navigation items */
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none; /* Remove underline from links */
+    font-weight: bold;
+}
+
+nav ul li a:hover { /* Style when hovering over navigation links */
+    color: #ffd700; /* Change color on hover */
+}
+
+/* Styles for main content sections */
+main section {
+    padding: 20px;
+    margin: 20px auto; /* Center sections and add space around them */
+    background-color: #fff;
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+    max-width: 900px; /* Max width for readability */
+}
+
+/* Styles for links within content */
+a {
+    color: #007bff; /* Blue link color */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Styles for the footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9em;
+    margin-top: 30px;
+}
+
+/* Container class for consistent content width */
+.container {
+    max-width: 960px; /* Common maximum width for content */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add some padding on sides for smaller screens */
+}
+
+/* Image styling */
+.profile-pic {
+    border-radius: 50%; /* Makes image circular */
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Ensures image covers area without distortion */
+    border: 3px solid #fff; /* White border around picture */
+    margin-bottom: 10px;
+}
