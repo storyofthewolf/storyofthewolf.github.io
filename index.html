@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First GitHub Page</title>
+    <title>Coming soon...</title>
+    <link rel="stylesheet" href="style.css"> </head>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,9 +21,65 @@
     </style>
 </head>
 <body>
-    <h1>Hello from my GitHub Page!</h1>
-    <p>This is my very first website hosted on GitHub Pages.</p>
-    <p>I'm learning web development!</p>
-    <button onclick="alert('You clicked the button!')">Click Me</button>
+<header>
+        <div class="container"> <img src="your-profile-pic.jpg" alt="Your professional headshot" class="profile-pic">
+            <h1>Eric Wolf</h1>
+            <p class="tagline">Researcher | Data Scientist | Open Source Contributor</p>
+        </div>
+    </header>
+<nav>
+        <div class="container">
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#research">Research Topics</a></li>
+                <li><a href="#code">Supported Code</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+  <main>
+        <section id="about" class="container">
+            <h2>About Me</h2>
+            <p>Welcome to my portfolio! I am a passionate [Your Field] researcher with expertise in [Key Skill 1], [Key Skill 2], and [Key Skill 3]. My work focuses on [brief overview of your research focus].</p>
+            <p>I believe in open science and actively contribute to open-source projects.</p>
+        </section>
+
+        <section id="publications" class="container">
+            <h2>Publications</h2>
+            <ul>
+                <li><a href="link-to-paper1.pdf" target="_blank" rel="noopener noreferrer">"Novel Insights into XYZ Phenomena"</a>, *Journal of Advanced Research*, 2024. [DOI: 10.xxxx]</li>
+                <li><a href="link-to-paper2.pdf" target="_blank" rel="noopener noreferrer">"Methodology for ABC Analysis using Machine Learning"</a>, *Conference Proceedings on ML Applications*, 2023.</li>
+                </ul>
+        </section>
+
+        <section id="research" class="container">
+            <h2>Research Topics</h2>
+            <p>My current research interests include:</p>
+            <ul>
+                <li><strong>Topic A:</strong> Investigating [details].</li>
+                <li><strong>Topic B:</strong> Developing new algorithms for [details].</li>
+                <li><strong>Topic C:</strong> Applying [method] to [problem].</li>
+            </ul>
+            <p>For more detailed information, please see my <a href="link-to-research-statement.pdf" target="_blank" rel="noopener noreferrer">Research Statement</a>.</p>
+        </section>
+
+       
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/eric-wolf-15a062169/ target="_blank" rel="noopener noreferrer">Your LinkedIn Profile</a></p>
+            <p>GitHub: <a href="https://github.com/storyofthewolf" target="_blank" rel="noopener noreferrer">Your GitHub Profile</a></p>
+            <p>&copy; <span id="2025"></span> Your Full Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+    
 </body>
 </html>
