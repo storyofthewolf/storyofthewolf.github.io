@@ -8,66 +8,88 @@
     --text-color: #343a40; /* Darker text */
     --light-bg: #f8f9fa; /* Very light background */
     --dark-bg: #2A4B7C; /* Dark background for header/footer */
-    --galaxy-blue: 2A4B7C; /*Galaxy Blue */
+    --galaxy-blue: #2A4B7C; /*Galaxy Blue */
     --endless-blue: #8DC2E1; /*Endless Blue */
     --border-color: #dee2e6; /* Light border */
     --font-sans: 'Lato', sans-serif;
     --font-mono: 'Roboto Mono', monospace;
 }
 
+/* Ensure HTML and Body take up full viewport height and remove default margins */
+/* added section for Dynamic Gradient */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Important for body to fill the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrollbar if elements slightly exceed width */
+}
+
 body {
     font-family: var(--font-sans);
-    line-height: 1.6;
+    line-height: 1.0;
     margin: 0;
     padding: 0;
     background-color: var(--light-bg);
     color: var(--text-color);
     scroll-behavior: smooth; /* Smooth scrolling for internal links */
+    
+    /* --- Dynamic Gradient Background --- */
+    background: linear-gradient(
+        45deg,          /* Angle of the gradient */
+        #2A4B7C,         /* Galaxy Blue */
+        #1A237E,         /* Dark Indigo / Deeper Blue */
+        #8DC2E1,         /* Patagonia Endless Blue */
+        #AAD8F5          /* Lighter Sky Blue */
+    );
+    background-size: 400% 400%; /* Make the gradient larger than the viewport */
+    animation: gradientShift 10s ease infinite alternate; /* Apply the animation */
+
+    /* Optional: Fallback background color if gradient doesn't load/supported */
+    background-color: #2A4B7C;
+
+/* Define the animation for the gradient */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    50% {
+        background-position: 100% 50%; /* Move to right */
+    }
+    100% {
+        background-position: 0% 50%; /* Move back to start (for 'alternate' direction) */
+    }
+}
 }
 
-/* --- Utility Container --- */
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 25px;
-    position: relative; /* Needed for positioning the menu toggle */
-}
 
 /* --- Header --- */
+/* --- Other General Styles (adjust as needed) --- */
 header {
-    background-color: var(--dark-bg);
-    color: #ab1919;
-    padding: 5px 0;
+    padding: 20px 20px;
+    /* Since body has the gradient, header will inherit/overlay it */
+    /* You might want a semi-transparent background for header/footer to ensure text readability */
+    background-color: rgba(0, 0, 0, 0.3); /* Slightly transparent black */
+    color: #fbf9f9; /* Lighter color for header text */
+}
+
+h1 {
+    font-size: 3rem;
+    /* IMPORTANT: Reset default margins on h1 */
+    margin-top: 0;
+    margin-bottom: 0; /* If you need space below h1, add it to header's padding-bottom or h1's margin-bottom explicitly */
+    padding: 0; /* Reset default padding on h1 */
+
+    /* Text alignment (inherited from body, but can be set here specifically for h1) */
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    position: relative; /* For stacking context */
-    z-index: 100; /* Ensure header is above menu when open */
-}
-.profile-pic {
-    border-radius: 50%;
-    width: 180px; /* Slightly larger profile picture */
-    height: 180px;
-    object-fit: cover;
-    border: 5px solid rgba(255,255,255,0.2); /* Semi-transparent border */
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+    
+    color: inherit; /* Inherit color from parent (header) */
 }
 
-.profile-pic:hover {
-    transform: scale(1.05); /* Slightly zoom on hover */
-}
-
-header h1 {
-    margin: 0;
-    font-size: 3em; /* Larger, more impactful name */
-    font-weight: 700; /* Bold */
-    letter-spacing: -0.03em; /* Tighten spacing slightly */
-}
 
 .tagline {
     font-size: 1.3em;
     color: #a0a0a0;
-    margin-top: 10px;
+    margin-top: 5px;
     font-weight: 300; /* Lighter weight */
 }
 
@@ -75,7 +97,7 @@ header h1 {
 .menu-toggle {
     display: block; /* Show on mobile by default */
     position: absolute; /* Position it in the top right */
-    top: 20px; /* Adjust as needed */
+    top: 40px; /* Adjust as needed */
     right: 25px; /* Adjust as needed, match container padding */
     background: none;
     border: none;
@@ -139,11 +161,23 @@ header h1 {
 
 
 /* --- Main Sections --- */
-main section {
-    padding: 60px 0; /* More vertical space between sections */
-    margin-bottom: 20px; /* Space between sections themselves */
-    background-color: #fff;
-    border-bottom: 1px solid var(--border-color); /* Subtle separation */
+main {
+    padding: 10px 10px;
+    min-height: calc(100vh - 120px); /* Adjust to fit content between header/footer */
+    display: column; /* Use flexbox to vertically center container content if needed */
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 960px; /* Constrain content width */
+    margin: auto auto; /* Center the container */
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for content */
+    border-radius: 30px;
+    backdrop-filter: blur(5px); /* Optional: Glassmorphism effect if browser supports */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* For the last section, remove bottom border */
@@ -151,29 +185,18 @@ main section:last-of-type {
     border-bottom: none;
 }
 
-section h2 {
-    font-size: 2.2em; /* Consistent heading size */
-    color: var(--primary-color);
-    text-align: center;
-    margin-bottom: 40px; /* More space below section titles */
-    position: relative; /* For the underline effect */
-    display: inline-block; /* Helps with underline width */
+h2 {
+    font-size: 2rem;
+    color: #AAD8F5; /* A lighter blue for subheadings */
 }
 
-section h2::after { /* A modern heading underline */
-    content: '';
-    display: block;
-    width: 60px; /* Short underline */
-    height: 3px;
-    background-color: var(--primary-color);
-    margin: 10px auto 0; /* Center the underline */
-}
 
 
 /* --- Text elements --- */
 p {
-    font-size: 1.05em;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0; /* A soft white for paragraphs */
 }
 
 ul, ol {
@@ -280,28 +303,18 @@ footer a:hover {
 }
 
 /* --- Contact Icons Styling --- */
-.contact-icons {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: flex; /* Use flexbox to align icons horizontally */
-    justify-content: center; /* Center the icons */
-    gap: 30px; /* Space between icons */
-}
-
 .contact-icons a {
-    color: #fff; /* White color for icons (since they're in a dark footer) */
-    font-size: 2.5em; /* Make icons larger */
-    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover */
+    color: #fbf9f9; /* Icon color */
+    margin: 0 15px;
+    font-size: 1.8rem;
+    transition: color 0.3s ease; /* Smooth transition for hover */
 }
 
 .contact-icons a:hover {
-    color: var(--primary-color); /* Change color on hover to your primary accent */
-   /* transform: translateY(-5px); */ /* Slightly lift the icon on hover */
+    color: #8DC2E1; /* Change color on hover */
 }
 
 
 
 
-
-/* ... (keep profile-pic, h1, tagline styles) ... */
 

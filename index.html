@@ -19,7 +19,7 @@
             color: #fbf9f9;
         }
         p {
-            color: #af5858;
+            color: #fbf9f9;
         }
     </style>
 </head>
@@ -27,12 +27,12 @@
 <body>
 
     <header>
-        <div class="container"></div>
+
             <h1>Eric Wolf</h1>
             <p class="tagline">Human | Skier | Giant Schnauzer Wrangler</p>
             <button class="menu-toggle" aria-label="Open navigation menu">
-              <i class="fas fa-bars"></i> </button>
-        </div>
+              <i class="fas fa-bars"></i> </button> 
+
     </header>
     <nav id="main-nav"> <!-- Navigation Menu -->
         <div class="container">
@@ -48,11 +48,15 @@
 
     <main>
         <section id="about" class="container">
-            <h2>Summary and Welcome</h2>    
+            <h2>Summary and Welcome</h2>  
+            <p> Welcome to my homepage.  My name is Eric Wolf.  I live in Breckenridge, Colorado.</p>
         </section>
+        <p></p>
         <section id="background" class="container">
             <h2>Background</h2>
-            <p>In my free time, I enjoy skiing, mountain, biking, and spending time with my Giant Schnauzers...sort of.</p>
+            <p>In my free time, I enjoy skiing, mountain, biking, and spending time with my Giant Schnauzers...sort of
+                However I have not been getting enough sleep because Olive wakes up to pee or eat snow multiple times per 
+                night, and now she is getting up with the first light of the summer Sun, around 5:30 AM. </p>
             <img src="/images/IMG_5348.jpg" alt="A photo of Eric Wolf smiling." width="285.46666666666664" height="380.0 loading="lazy">
             <p> Go Bills!</p>
         </section>  
@@ -61,7 +65,7 @@
     </main>
 
     <footer id="contact">
-        <div class="container">
+       
             <div class="contact-icons"> 
                 <a href="mailto:storyofthewolf@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
                     <i class="fas fa-envelope"></i>
@@ -77,14 +81,18 @@
                 </a>
             </div>
             <p>&copy; <span id="current-year"></span> Eric Wolf. All rights reserved.</p>
-        </div>
+        
         <script>
             document.getElementById('current-year').textContent = new Date().getFullYear();
         </script>
     </footer>
     
 <script src="script.js"></script>
-        
+       
+<script>
+        // JavaScript to update the current year dynamically in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+ </script>
 
 </body>
 </html>
