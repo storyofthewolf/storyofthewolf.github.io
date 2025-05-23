@@ -35,17 +35,23 @@ body {
     
     /* --- Dynamic Gradient Background --- */
     background: linear-gradient(
-        45deg,          /* Angle of the gradient */
+        180deg,          /* Angle of the gradient */
         #2A4B7C,         /* Galaxy Blue */
         #1A237E,         /* Dark Indigo / Deeper Blue */
         #8DC2E1,         /* Patagonia Endless Blue */
         #AAD8F5          /* Lighter Sky Blue */
     );
     background-size: 400% 400%; /* Make the gradient larger than the viewport */
-    animation: gradientShift 10s ease infinite alternate; /* Apply the animation */
+    animation: gradientShift 30s ease infinite alternate; /* Apply the animation */
 
     /* Optional: Fallback background color if gradient doesn't load/supported */
     background-color: #2A4B7C;
+}
+
+/* Class added by JS to prevent body scrolling when menu is open */
+body.no-scroll {
+    overflow-y: hidden;
+}
 
 /* Define the animation for the gradient */
 @keyframes gradientShift {
@@ -59,13 +65,12 @@ body {
         background-position: 0% 50%; /* Move back to start (for 'alternate' direction) */
     }
 }
-}
 
 
 /* --- Header --- */
 /* --- Other General Styles (adjust as needed) --- */
 header {
-    padding: 20px 20px;
+    padding: 20px;
     /* Since body has the gradient, header will inherit/overlay it */
     /* You might want a semi-transparent background for header/footer to ensure text readability */
     background-color: rgba(0, 0, 0, 0.3); /* Slightly transparent black */
@@ -85,78 +90,11 @@ h1 {
     color: inherit; /* Inherit color from parent (header) */
 }
 
-
 .tagline {
     font-size: 1.3em;
     color: #a0a0a0;
     margin-top: 5px;
     font-weight: 300; /* Lighter weight */
-}
-
-/* --- Menu Toggle Button (Mobile) --- */
-.menu-toggle {
-    display: block; /* Show on mobile by default */
-    position: absolute; /* Position it in the top right */
-    top: 40px; /* Adjust as needed */
-    right: 25px; /* Adjust as needed, match container padding */
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 1.8em; /* Size of the hamburger icon */
-    cursor: pointer;
-    z-index: 101; /* Ensure it's above the menu */
-    padding: 10px; /* Make it easier to tap */
-    transition: color 0.3s ease;
-}
-
-.menu-toggle:hover {
-    color: var(--primary-color);
-}
-
-/* --- Mobile Navigation (Default State - Hidden) --- */
-#main-nav {
-    /* Hide by default, full screen on mobile */
-    display: flex; /* Use flex to center content inside */
-    justify-content: center;
-    align-items: center;
-    position: fixed; /* Fixed position relative to viewport */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Full screen height */
-    background-color: var(--dark-bg); /* Dark overlay */
-    z-index: 99; /* Below header, above main content */
-
-    /* Initially hide the menu off-screen */
-    transform: translateX(100%); /* Move 100% off to the right */
-    transition: transform 0.4s ease-in-out; /* Smooth slide transition */
-}
-
-#main-nav.active { /* Class added by JavaScript when menu is open */
-    transform: translateX(0); /* Slide into view */
-}
-
-#main-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* Stack nav items vertically */
-    align-items: center; /* Center items horizontally */
-    gap: 30px; /* Space between items */
-}
-
-#main-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 1.8em; /* Larger font for menu items */
-    padding: 10px 0;
-    transition: color 0.3s ease;
-}
-
-#main-nav ul li a:hover {
-    color: var(--primary-color);
 }
 
 
@@ -218,48 +156,128 @@ a:hover {
     text-decoration: underline;
 }
 
-/* --- Code & Preformatted Text --- */
-code {
-    font-family: var(--font-mono); /* Monospace font for code */
-    background-color: #e9ecef; /* Light background for inline code */
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-size: 0.9em;
+
+
+/* --- Menu Toggle Button (Mobile) --- */
+/* Styles for the hamburger menu toggle button */
+.menu-toggle-btn {
+    position: fixed; /* Stays in place when scrolling */
+    top: 20px;
+    right: 20px;
+    z-index: 1001; /* Ensure it's above other content and the sidebar when closed */
+    background: #8DC2E1; /* Endless Blue for the button */
+    color: #1A237E; /* Dark text for button */
+    border: none;
+    border-radius: 50%; /* Make it round */
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
-pre {
-    background-color: #e9ecef;
-    padding: 15px;
-    border-radius: 5px;
-    overflow-x: auto; /* For long lines of code */
-    font-family: var(--font-mono);
-    font-size: 0.9em;
-    line-height: 1.4;
-    margin-top: 20px;
+.menu-toggle-btn:hover {
+    background: #AAD8F5; /* Lighter on hover */
+    transform: scale(1.05);
 }
 
-/* --- Tables --- */
-table {
-    width: 100%;
-    border-collapse: collapse; /* Remove double borders */
-    margin-top: 20px;
+/* Styles for the slide-out sidebar menu */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Start off-screen to the right */
+    width: 300px; /* Fixed width, adjust as needed */
+    max-width: 80vw; /* Ensure it doesn't exceed 80% of viewport width on small screens */
+    height: 100vh; /* Full viewport height */
+    background-color: #2A4B7C; /* Galaxy Blue for sidebar background */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Must be higher than normal content, lower than toggle button */
+    transition: right 0.4s ease-out; /* Smooth sliding transition */
+    overflow-y: auto; /* Enable scrolling if menu content is too long */
+    padding-top: 60px; /* Space for close button */
+    padding-bottom: 20px; /* Padding at bottom */
+    text-align: left; /* Align menu items to the left */
 }
 
-table th, table td {
-    border: 1px solid var(--border-color);
-    padding: 12px 15px;
-    text-align: left;
+/* State when the sidebar is open */
+.sidebar.is-open {
+    right: 0; /* Slide into view */
 }
 
-table th {
-    background-color: var(--light-bg);
-    font-weight: 700;
-    color: var(--dark-bg);
+/* Close button inside the sidebar */
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fbf9f9; /* White color for the 'x' icon */
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+     z-index: 1002; /* Ensure it's above menu items if they overlap */
 }
 
-table tr:nth-child(even) { /* Zebra striping for rows */
-    background-color: #f2f2f2;
+.sidebar .close-btn:hover {
+    color: #AAD8F5; /* Lighter on hover */
 }
+
+/* Navigation list and links inside the sidebar */
+.sidebar ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar li a {
+    display: block; /* Make links fill the width for easier clicking */
+    padding: 15px 25px;
+    color: #fbf9f9; /* White text for links */
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
+    color: #8DC2E1; /* Endless Blue on hover */
+}
+
+/* Optional: Overlay/backdrop that dims the background */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 999; /* Below the sidebar, above content */
+    opacity: 0; /* Hidden initially */
+    visibility: hidden; /* Hide completely when not visible */
+    transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+}
+
+/* State when the overlay is visible */
+.sidebar-overlay.is-visible {
+    opacity: 1; /* Fade in */
+    visibility: visible; /* Make visible */
+}
+
+/* --- Responsive Adjustments (Optional, but Recommended) --- */
+@media (min-width: 768px) {
+    /* On larger screens, maybe the menu is always visible or positioned differently */
+    /* Or you might just keep the current fixed-width sidebar for desktop too */
+}
+
+
+
+
+
+
 
 /* --- Footer --- */
 footer {

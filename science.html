@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css"> </head>
+    <link rel="stylesheet" href="style.css?v=1.0""> </head>
     <style>
         body {
             font-family: Helvetica, 'Times New Roman', Times, serif;
@@ -26,24 +26,29 @@
 
 <body>
 
-    <header>
-  <!--       <div class="container"></div> -->
-            <h1>Eric Wolf</h1>
-            <p class="tagline">Human | Skier | Giant Schnauzer Wrangler</p>
-            <button class="menu-toggle" aria-label="Open navigation menu">
-              <i class="fas fa-bars"></i> </button>
- <!--        </div>  -->
+  <header>
+        <h1>Eric Wolf</h1>
+        <p> Academic Homepage</p>
+        <p class="tagline">Human | Skier | Giant Schnauzer Wrangler</p>
     </header>
-    <nav id="main-nav"> <!-- Navigation Menu -->
-        <div class="container">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="aboutme.html">About Me</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="science.html">Science</a></li>
-            </ul>
-        </div>
+    
+    <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Open navigation menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav id="sidebar-menu" class="sidebar"> <!-- Navigation Menu -->
+        <button class="close-btn" aria-label="Close navigation menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="science.html">Science</a></li>
+            <li><a href="publications.html">Publications</a></li>  
+            <li><a href="aboutme.html">About Me</a></li>
+        </ul>
     </nav>
+    
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
 
     <main>
         <section id="Science="container">
@@ -76,6 +81,27 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // JavaScript for the sidebar functionality
+    const menuToggleButton = document.getElementById('menu-toggle-btn');
+    const sidebar = document.getElementById('sidebar-menu');
+    const closeButton = sidebar.querySelector('.close-btn');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const body = document.body; // Reference to the body element
+
+    function toggleSidebar() {
+        sidebar.classList.toggle('is-open');
+        sidebarOverlay.classList.toggle('is-visible');
+        body.classList.toggle('no-scroll'); // Toggle no-scroll class on body
+    }
+
+    menuToggleButton.addEventListener('click', toggleSidebar);
+    closeButton.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar); // Close when clicking overlay
+</script>
    
 </body>
 </html>
