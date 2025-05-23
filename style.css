@@ -7,7 +7,9 @@
     --secondary-color: #6c757d; /* A subtle gray */
     --text-color: #343a40; /* Darker text */
     --light-bg: #f8f9fa; /* Very light background */
-    --dark-bg: #212529; /* Dark background for header/footer */
+    --dark-bg: #2A4B7C; /* Dark background for header/footer */
+    --galaxy-blue: 2A4B7C; /*Galaxy Blue */
+    --endless-blue: #8DC2E1; /*Endless Blue */
     --border-color: #dee2e6; /* Light border */
     --font-sans: 'Lato', sans-serif;
     --font-mono: 'Roboto Mono', monospace;
@@ -34,8 +36,8 @@ body {
 /* --- Header --- */
 header {
     background-color: var(--dark-bg);
-    color: #fff;
-    padding: 40px 0;
+    color: #ab1919;
+    padding: 5px 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     position: relative; /* For stacking context */
@@ -100,7 +102,7 @@ header h1 {
     left: 0;
     width: 100%;
     height: 100%; /* Full screen height */
-    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    background-color: var(--dark-bg); /* Dark overlay */
     z-index: 99; /* Below header, above main content */
 
     /* Initially hide the menu off-screen */
