@@ -126,6 +126,7 @@ main section:last-of-type {
 h2 {
     font-size: 2rem;
     color: #AAD8F5; /* A lighter blue for subheadings */
+    font-style: italic;
 }
 
 
@@ -146,13 +147,13 @@ li {
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--endless-blue);
     text-decoration: none;
     transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 a:hover {
-    color: #0056b3; /* Slightly darker on hover */
+    color: #dfe5eb; 
     text-decoration: underline;
 }
 
@@ -275,10 +276,6 @@ a:hover {
 
 
 
-
-
-
-
 /* --- Footer --- */
 footer {
     background-color: var(--dark-bg);
@@ -326,10 +323,14 @@ footer a:hover {
     margin: 0 15px;
     font-size: 1.8rem;
     transition: color 0.3s ease; /* Smooth transition for hover */
+    text-decoration: none;
+    transform: scale(1.05);
 }
 
 .contact-icons a:hover {
     color: #8DC2E1; /* Change color on hover */
+    text-decoration: none;
+    transform: scale(1.1);
 }
 
 
