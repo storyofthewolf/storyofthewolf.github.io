@@ -307,7 +307,8 @@ figcaption {
 /* Float to the right with margin */
 .float-right {
     float: right; /* Pushes the figure to the right */
-    width: 350px; /* Set a specific width for the figure (adjust as needed) */
+    width: 40% ; /* Use a percentage for the width (e.g., 40% of its parent container) */
+    max-width: 350px /* Optional: set a maximum pixel width even if percentage is larger */
     /* Alternatively, use a percentage for more responsiveness: width: 40%; */
     margin: 0 0 10px 20px; /* Top, Right, Bottom, Left margins.
                               '20px' on the left creates space between image and wrapping text. */
@@ -315,11 +316,10 @@ figcaption {
 
 /* Float to the left with margin */
 .float-left {
-    float: left; /* Pushes the figure to the left */
-    width: 350px; /* Set a specific width for the figure (adjust as needed) */
-    /* Alternatively, use a percentage for more responsiveness: width: 40%; */
-    margin: 0 20px 10px 0; /* Top, Right, Bottom, Left margins.
-                              '20px' on the right creates space between image and wrapping text. */
+    float: left;
+    width: 40%; /* Use a percentage for the width */
+    max-width: 350px; /* Optional: set a maximum pixel width */
+    margin: 0 20px 10px 0;
 }
 
 /* --- Clearing Floats (Important for subsequent content) --- */
@@ -340,14 +340,15 @@ figcaption {
 }
 /* Then apply .clearfix to the parent container of your figure and wrapping paragraphs. */
 
-/* --- Responsive Adjustments (Optional) --- */
-@media (max-width: 768px) {
+/* --- Responsive Adjustments for Smaller Screens (Phones) --- */
+/* This media query will apply when the screen width is 600px or less */
+@media (max-width: 600px) {
     .float-right,
     .float-left {
-        float: none; /* Disable float on smaller screens */
-        width: 100%; /* Make image full width */
-        margin: 10px 0; /* Add top/bottom margin */
-        text-align: center; /* Center the image/caption block */
+        float: none; /* Disable the float */
+        width: 90%; /* Make the figure take up most of the screen width, but leave some side padding */
+        margin: 10px auto; /* Center the block and add top/bottom margin */
+        text-align: center; /* Ensure caption/content inside is centered */
     }
 }
 
