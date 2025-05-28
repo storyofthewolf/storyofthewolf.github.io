@@ -112,11 +112,12 @@ main {
     margin: auto auto; /* Center the container */
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for content */
-    border-radius: 30px;
+    border-radius: 10px;
     backdrop-filter: blur(5px); /* Optional: Glassmorphism effect if browser supports */
     -webkit-backdrop-filter: blur(5px); /* For Safari */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 /* For the last section, remove bottom border */
 main section:last-of-type {
@@ -308,7 +309,7 @@ figcaption {
 .float-right {
     float: right; /* Pushes the figure to the right */
     width: 40% ; /* Use a percentage for the width (e.g., 40% of its parent container) */
-    max-width: 350px /* Optional: set a maximum pixel width even if percentage is larger */
+    max-width: 350px; /* Optional: set a maximum pixel width even if percentage is larger */
     /* Alternatively, use a percentage for more responsiveness: width: 40%; */
     margin: 0 0 10px 20px; /* Top, Right, Bottom, Left margins.
                               '20px' on the left creates space between image and wrapping text. */
@@ -389,7 +390,7 @@ footer a:hover {
         padding: 40px 0; /* Reduce section padding */
     }
     .container {
-        padding: 0 15px; /* Reduce container padding */
+        padding: 5px 10px; /* Reduce container padding */
     }
 }
 
