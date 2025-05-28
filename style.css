@@ -275,6 +275,81 @@ a:hover {
 }
 
 
+/* --- Basic Figure Styling --- */
+figure {
+    margin: 0; /* Remove default browser margins for figure */
+    padding: 0;
+    text-align: center; /* Center the caption */
+    font-size: 0.9em; /* Smaller font for captions */
+    color: #ccc; /* Lighter color for captions */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border around the figure */
+    padding: 10px; /* Optional: padding inside the figure container */
+    background-color: rgba(0, 0, 0, 0.1); /* Optional: subtle background for the figure */
+    border-radius: 5px; /* Optional: rounded corners */
+}
+
+/* --- Image Sizing within the Figure --- */
+figure img {
+    max-width: 100%; /* Important: Makes the image responsive and fit its parent <figure> */
+    height: auto;    /* Maintains aspect ratio */
+    display: block;  /* Removes extra space below image often created by inline elements */
+    margin: 0 auto 5px auto; /* Centers image if figure is wider, adds space below image before caption */
+    border-radius: 3px; /* Optional: slightly rounded corners for the image itself */
+}
+
+/* --- Caption Styling --- */
+figcaption {
+    margin-top: 5px; /* Space between image and caption */
+}
+
+/* --- Text Wrapping (Floating) Classes --- */
+
+/* Float to the right with margin */
+.float-right {
+    float: right; /* Pushes the figure to the right */
+    width: 350px; /* Set a specific width for the figure (adjust as needed) */
+    /* Alternatively, use a percentage for more responsiveness: width: 40%; */
+    margin: 0 0 10px 20px; /* Top, Right, Bottom, Left margins.
+                              '20px' on the left creates space between image and wrapping text. */
+}
+
+/* Float to the left with margin */
+.float-left {
+    float: left; /* Pushes the figure to the left */
+    width: 350px; /* Set a specific width for the figure (adjust as needed) */
+    /* Alternatively, use a percentage for more responsiveness: width: 40%; */
+    margin: 0 20px 10px 0; /* Top, Right, Bottom, Left margins.
+                              '20px' on the right creates space between image and wrapping text. */
+}
+
+/* --- Clearing Floats (Important for subsequent content) --- */
+/* If you have content *after* the wrapping text that you want to start *below* the floated image,
+   you need to clear the float. The easiest way is to add a div with `clear: both;`
+   right after the last paragraph that wraps around the image. */
+.clear-float {
+    clear: both;
+    height: 0; /* Don't add extra space */
+    visibility: hidden; /* Hide the div itself */
+}
+
+/* Alternatively, for a parent container that holds floated items and wants to self-clear: */
+/* .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Then apply .clearfix to the parent container of your figure and wrapping paragraphs. */
+
+/* --- Responsive Adjustments (Optional) --- */
+@media (max-width: 768px) {
+    .float-right,
+    .float-left {
+        float: none; /* Disable float on smaller screens */
+        width: 100%; /* Make image full width */
+        margin: 10px 0; /* Add top/bottom margin */
+        text-align: center; /* Center the image/caption block */
+    }
+}
 
 /* --- Footer --- */
 footer {
