@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Home Page
+  </title>
+  <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" referrerpolicy="no-referrer" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header>
+   <h1>
+    Eric T. Wolf, Ph.D.
+   </h1>
+   <!--    <p class="tagline">Human | Scientist | Giant Schnauzer Wrangler</p>  -->
+  </header>
+  <button aria-label="Open navigation menu" class="menu-toggle-btn" id="menu-toggle-btn">
+   <i class="fas fa-bars">
+   </i>
+  </button>
+  <nav class="sidebar" id="sidebar-menu">
+   <!-- Navigation Menu -->
+   <button aria-label="Close navigation menu" class="close-btn">
+    <i class="fas fa-times">
+    </i>
+   </button>
+   <ul>
+    <li>
+     <a href="index.html">
+      home
+     </a>
+    </li>
+    <!--           <li><a href="science.html">Science</a></li> -->
+    <li>
+     <a href="publications.html">
+      publications
+     </a>
+    </li>
+    <li>
+     <a href="aboutme.html">
+      about me
+     </a>
+    </li>
+   </ul>
+  </nav>
+  <div class="sidebar-overlay" id="sidebar-overlay">
+  </div>
+  <main>
+   <section class="container" id="Publications">
+    <h2>
+     publications
+    </h2>
+    <p>
+     <a aria-label="See my Google Scholar Page" href="https://scholar.google.com/citations?user=oqRKUVcAAAAJ&amp;hl=en" rel="noopener noreferrer" target="_blank">
+      View my Google Scholar Profile
+     </a>
+    </p>
+    <div class="pub-list">
+     <h3>
+      In preparation
+     </h3>
+     <ol>
+      <li>
+       [73] Lincowski, A.P., Meadows, V.S., Crisp, D.,
+       <b>
+        Wolf, E.T.
+       </b>
+       , and Robinson, T.D. “Bridging Two Worlds: Introduction of a New Two-Column Climate Model for Terrestrial Exoplanet Studies and Application to JWST Observations of TRAPPIST-1 b and c.”
+       <i>
+        In preparation for Fall 2025 submission.
+       </i>
+      </li>
+      <li>
+       [72] Haqq-Misra, J. and
+       <b>
+        Wolf, E.T.
+       </b>
+       “Maximum Lifetime of the Vegetative Biosphere.”
+       <i>
+        In preparation for Fall 2025 submission.
+       </i>
+      </li>
+      <li>
+       [71] Way, M.J.,
+       <b>
+        Wolf, E.T.
+       </b>
+       , and Wilmes, S.-B. “Killing the Faint Young Sun Paradox: an exploration of Eoarchean climate.”
+       <i>
+        In preparation for Fall 2025 submission.
+       </i>
+      </li>
+     </ol>
+    </div>
+   </section>
+  </main>
+  <footer id="contact">
+   <!--      <div class="container"> -->
+   <div class="contact-icons">
+    <a aria-label="Email" href="mailto:storyofthewolf@gmail.com" rel="noopener noreferrer" target="_blank">
+     <i class="fas fa-envelope">
+     </i>
+    </a>
+    <a aria-label="LinkedIn Profile" href="https://www.linkedin.com/in/eric-wolf-15a062169/" rel="noopener noreferrer" target="_blank">
+     <i class="fab fa-linkedin">
+     </i>
+    </a>
+    <a aria-label="GitHub Profile" href="https://github.com/storyofthewolf" rel="noopener noreferrer" target="_blank">
+     <i class="fab fa-github">
+     </i>
+    </a>
+    <a aria-label="Strava Profile" href="https://www.strava.com/athletes/12672550" rel="noopener noreferrer" target="_blank">
+     <i class="fab fa-strava">
+     </i>
+    </a>
+    <!--           </div> -->
+    <p>
+     ©
+     <span id="current-year">
+     </span>
+     Eric Wolf. All rights reserved.
+    </p>
+   </div>
+   <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+   </script>
+  </footer>
+  <script src="script.js">
+  </script>
+  <script>
+   document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // JavaScript for the sidebar functionality
+    const menuToggleButton = document.getElementById('menu-toggle-btn');
+    const sidebar = document.getElementById('sidebar-menu');
+    const closeButton = sidebar.querySelector('.close-btn');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const body = document.body; // Reference to the body element
+
+    function toggleSidebar() {
+        sidebar.classList.toggle('is-open');
+        sidebarOverlay.classList.toggle('is-visible');
+        body.classList.toggle('no-scroll'); // Toggle no-scroll class on body
+    }
+
+    menuToggleButton.addEventListener('click', toggleSidebar);
+    closeButton.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar); // Close when clicking overlay
+  </script>
+ </body>
+</html>
