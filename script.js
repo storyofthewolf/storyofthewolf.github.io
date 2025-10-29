@@ -1,32 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.getElementById('main-nav');
-    const navLinks = document.querySelectorAll('#main-nav ul li a'); // Get all nav links
-
-    // Function to toggle the menu
-    function toggleMenu() {
-        mainNav.classList.toggle('active'); // Adds/removes 'active' class
-        // Optionally, change the hamburger icon to a close icon
-        if (mainNav.classList.contains('active')) {
-            menuToggle.querySelector('i').classList.remove('fa-bars');
-            menuToggle.querySelector('i').classList.add('fa-times'); // 'X' icon
-        } else {
-            menuToggle.querySelector('i').classList.remove('fa-times');
-            menuToggle.querySelector('i').classList.add('fa-bars'); // Back to hamburger
-        }
+    
+    // --- Set current year in footer ---
+    const yearSpan = document.getElementById('current-year');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
     }
 
-    // Add event listener to the menu toggle button
-    if (menuToggle) {
-        menuToggle.addEventListener('click', toggleMenu);
+    // --- Sidebar Menu Functionality ---
+    const menuToggleButton = document.getElementById('menu-toggle-btn');
+    const sidebar = document.getElementById('sidebar-menu');
+    const closeButton = sidebar.querySelector('.close-btn');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
+    const body = document.body;
+
+    // Function to open/close the sidebar
+    function toggleSidebar() {
+        // Check if elements exist before toggling classes
+        if (sidebar) sidebar.classList.toggle('is-open');
+        if (sidebarOverlay) sidebarOverlay.classList.toggle('is-visible');
+        if (body) body.classList.toggle('no-scroll');
     }
 
-    // Add event listeners to each navigation link to close the menu on click
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            if (mainNav.classList.contains('active')) { // Only close if menu is open
-                toggleMenu(); // Use the same toggle function to close
-            }
-        });
-    });
+    // Add event listeners only if the elements exist on the page
+    if (menuToggleButton) {
+        menuToggleButton.addEventListener('click', toggleSidebar);
+    }
+    if (closeButton) {
+        closeButton.addEventListener('click', toggleSidebar);
+    }
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', toggleSidebar); // Close when clicking overlay
+    }
 });

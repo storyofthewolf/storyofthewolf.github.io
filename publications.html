@@ -154,33 +154,9 @@
                 </a>
   <p>&copy; <span id="current-year"></span> Eric Wolf. All rights reserved.</p>
         </div>
-        <script>
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        </script>
     </footer>
 
     <script src="script.js"></script>
-
-    <script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // JavaScript for the sidebar functionality
-    const menuToggleButton = document.getElementById('menu-toggle-btn');
-    const sidebar = document.getElementById('sidebar-menu');
-    const closeButton = sidebar.querySelector('.close-btn');
-    const sidebarOverlay = document.getElementById('sidebar-overlay');
-    const body = document.body; // Reference to the body element
-
-    function toggleSidebar() {
-        sidebar.classList.toggle('is-open');
-        sidebarOverlay.classList.toggle('is-visible');
-        body.classList.toggle('no-scroll'); // Toggle no-scroll class on body
-    }
-
-    menuToggleButton.addEventListener('click', toggleSidebar);
-    closeButton.addEventListener('click', toggleSidebar);
-    sidebarOverlay.addEventListener('click', toggleSidebar); // Close when clicking overlay
-</script>
 
 </body>
 </html>
