@@ -147,6 +147,11 @@ li {
     margin-bottom: 10px;
 }
 
+#Publications ul li {
+    padding-left: 3em; /* This indents all lines */
+    text-indent: -3em;  /* This pulls only the first line back */
+}
+
 a {
     color: var(--endless-blue);
     text-decoration: none;
