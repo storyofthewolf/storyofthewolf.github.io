@@ -3,72 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Eric T. Wolf, Ph.D. - Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css?v=1"> </head>
-</head>
+    <link rel="stylesheet" href="style.css?v=1.6"> </head>
 
 <body>
 
     <header>
         <h1>Eric T. Wolf, Ph.D. </h1>
-    <!--    <p class="tagline">Human | Scientist | Giant Schnauzer Wrangler</p>  -->
+        <p class="tagline"> numerical modeling | research | data </p> 
     </header>
+
+    <nav class="top-nav">
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#recent">Recent Hightlights</a></li>
+            <li><a href="#projects">Projects</a></li> 
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#aboutme">About Me</a></li>
+        </ul>
+    </nav>
 
     <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Open navigation menu">
         <i class="fas fa-bars"></i>
     </button>
-    <nav id="sidebar-menu" class="sidebar"> <!-- Navigation Menu -->
+    
+    <nav id="sidebar-menu" class="sidebar"> 
         <button class="close-btn" aria-label="Close navigation menu">
             <i class="fas fa-times"></i>
         </button>
         <ul>
-            <li><a href="index.html">home</a></li>
-  <!--           <li><a href="science.html">Science</a></li> -->
-            <li><a href="publications.html">publications</a></li>  
-            <li><a href="aboutme.html">about me</a></li>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#recent">Recent Hightlights</a></li>
+            <li><a href="#projects">Projects</a></li> 
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#aboutme">About Me</a></li>
         </ul>
     </nav>
     
     <div id="sidebar-overlay" class="sidebar-overlay"></div>
 
     <main>
-        <section id="about" class="container">
-            <h2>academic homepage</h2>  
-            </p>
+
+        <section id="overview"></section>
+            <section id="overview" class="container">
+                <h2>overview</h2>
+
+                <p> Over the past decade I have worked on numerous NASA sponsored projects that cross boundaries between climate, planetary, and space sciences.
+                    I have studied numerous topics including the evolution of Earth's climate through time, the Faint Young Sun Paradox, moist and runaway greenhouse
+                    climates for future Earth, the habitability of extrasolar planets, the characterization extrasolar planets through transmission and thermal emission spectra, and
+                    the microphysical and optical properties of fractal aggregate aerosols. </p>
+                <p> My primary tools are 3D general circulation models, radiative transfer models, and cloud and aerosol microphysical models.  I am perhaps most known 
+                    for developing and supporting ExoCAM, an extension of the National Center for Atmospheric Research's Community Earth System Model that facilitates
+                    modeling of exotic (non-Earth-like) atmospheres. At the heart of ExoCAM is a ExoRT, a flexible two-stream correlated-K radiative transfer model.  ExoCAM and ExoRT are 
+                    used by many research teams around the world.  I maintain strong interest in open-source software and building tools that are broadly useful to the community.    </p>
+
+                <h2>current postion</h2>
+                <p>
+                Research Scientist <br>
+                University of Colorado, Boulder <br>
+                Laboratory of Atmospheric and Space Physics
+                </p>
+                
+                <h2>education</h2>
+                <p> 
+                 B.S. Astronomy, University of Maryland, College Park, 2007<br>
+                 Ph.D. Atmospheric and Oceanic Sciences, University of Colorado, Boulder, 2014<br>
+                </p>
+
+                 <div class="cv-download">
+                    <a href="files/Eric_Wolf_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn">Download Full CV (PDF)</a>
+                </div>
+
+            </section>
         </section>
-        <p></p>
-        <section id="background" class="container">
-            <h2>the basics</h2>
-             <figure class="float-right"> <img src="/images/IMG_4101.jpg" alt="A photo representing my work or interests." loading="lazy">
-             <figcaption>Me and my boy.</figcaption>
-        </figure>
-            <p> Currently I am a research scientist at the University of Colorado, Boulder and the Laboratory for Atmospheric and Space 
-                Physics (LASP).  Overpast decade I have worked on numerous NASA sponsored projects that cross boundaries between climate and space sciences.
-                I have published research on topics including the evolution of Earth's climate through time, the Faint Young Sun Paradox, moist and runaway greenhouse
-                climates for future Earth, the habitability of planets in other star systems, characterizing extrasolar planets through thermal emission, and
-                the microphysical and optical properties of fractal aggregate aerosols.  My primary tools are 3D general circulation models, line-by-line and 
-                correlated-k radiative transfer models, and cloud and aerosol microphysical models.  I am perhaps most known 
-                for developing and supporting ExoCAM, an extension of the National Center for Atmspheric Research's Community Earth System Model that facilitates
-                modeling of exotic (non-Earth-like) atmospheres.  I have strong interestes in open-source software, building tools that are broadly useful to the community.    </p>
-            
-            <p> I am currently looking for new opportunities in science, industry, or elsewhere.   </p> 
 
-            <h2>education</h2>
-            <p> B.S. Astronomy, University of Maryland, College Park, 2007</p>
-            <p> Ph.D. Atmospheric and Oceanic Sciences, University of Colorado, Boulder, 2014</p>
-            <h2>associations</h2>
-            <p> Virtual Planetary Laboratory (VPL)</p>
-            <p> Consortium for Habitabile Atmospheres on M-dwarf Planets (CHAMPs)</p>
-            <p> The ROCKE-3D Modeling Team</p>
-            <p> Blue Marble Institute for Space Sciences (BMSIS)</p>
-        </section>  
+ <section id="highlights">
+            <section id="highlights" class="container">
+                <h2>recent highlights</h2>
+                <ul>
+                    <li><i>[October 7th, 2025] </i>&nbsp;&nbsp;<b>New paper on TRAPPIST-1 e</b> chemistry, climate and transmission spectral modeling.  This work takes a novel approach
+                        of considering a quasi-monte Carlo sparse grid while employing Kriging (i.e. gaussian process emulation) to emulate the full parameter space.  See our work
+                        published  <a href="https://doi.org/10.3847/1538-3881/ae0e20" target="_blank" rel="noopener noreferrer">here</a>.</li>
+     
+                    <li><i>[June 17th, 2025] </i>&nbsp;&nbsp;<b>Awarded new NASA Habitable Worlds Program grant</b>. Selected as Institutional PI for "Exploring the Influence of Hazes on Climate and Spectra of Small Planets Around FGK Stars." 
+                                                    The program will run from 2025 to 2028, where I will conduct simulations with ExoCAM-CARMA. </li>  
+                    <li><i>[April 1st, 2025] </i>&nbsp;&nbsp;<b>Talk at the Aspen Center for Physics </b> discussing sparse grid modeling and thermal emission phase curves.</b> 
+                    </li>
+                </ul>
+            </section>
+        </section>
 
+        <section id="projects">
+            <div class="container">
+                <h2>projects</h2> 
+                <div class="project-grid">
+
+                    <div class="project-card">
+                        <h4>ExoCAM/ExoRT Open-Source Tools for Climate Modeling</h4>
+                        <div class="card-body">
+                            <figure class="card-figure">
+                                <img src="/files/ExoCAM_LOGO.png" alt="">
+                            </figure>
+                            <div class="card-text-content">
+                                <p><i>Primary developer and maintainer for <a href="https://doi.org/10.3847/PSJ/ac3f3d" target="_blank" rel="noopener noreferrer">ExoCAM</a>. </i> ExoCAM is a 3D climate model for exoplanet atmospheres based on the National Center for Atmospheric Research 
+                                   Community Earth System Model (CESM).  ExoCAM expands CESM users to simulate a wide variety of planetary atmospheres, relevant to past, present, and future
+                                   Earth, solar system bodies, and extrasolar planets. At the heart of ExoCAM, is ExoRT, a flexible two-stream correlated-k radiative transfer model which 
+                                   expands the model capabilities to allow diverse atmospheric compositions, and input stellar spectra.  ExoCAM and ExoRT are currently used by research groups on 
+                                   3 continents, studying topics from Earth's future climate, terrestrial M-dwarf planets, mini-Neptune planets, planets around white dwarf stars, among other topics.
+                                   The code is publicly available on GitHub for
+                                    <a href="https://github.com/storyofthewolf/ExoCAM" target="_blank" rel="noopener noreferrer">ExoCAM</a> and 
+                                   <a href="https://github.com/storyofthewolf/ExoRT" target="_blank" rel="noopener noreferrer">ExoRT</a>.
+                                    I am committed to building robust, open-source software for the global planetary science community.
+                                </p>
+                                </div>
+                        </div>
+                    </div>
+
+                     <div class="project-card">
+                        <h4>Earth Climate Evolution</h4>
+                        <div class="card-body">
+                            <figure class="card-figure">
+                                <img src="/files/earth_evolution_v2.png" alt="">
+                            </figure>
+                            <div class="card-text-content">
+                                <p><i> The evolution of Earth's climate past present and future.</i>  Over the course oy my career I have used 3D models to investigate how Earth's climate
+                                   system evolves due to radiative and cloud effects.  I have studied solutions to the so-called 
+                                   <a href="https://doi.org/10.1089/ast.2012.0936" target="_blank" rel="noopener noreferrer">Faint Young Sun Paradox</a> (i.e. how did the ancient Earth stay 
+                                   warm and habitable despite ~25% less solar energy), 
+                                   <a href="https://doi.org/10.1002/2015JD023302" target="_blank" rel="noopener noreferrer">the fate of Earth in the distant future</a> as the Sun gradually brightens over time, 
+                                   the co-evolution and 
+                                   <a href="https://doi.org/10.1029/2018JD029262" target="_blank" rel="noopener noreferrer">climate sensitivity </a> due to changes in CO2 and the solar constant, 
+                                   and the effect of <a href="https://www.science.org/doi/10.1126/science.1183260" target="_blank" rel="noopener noreferrer">fractal aggregate hazes</a>
+                                    on early Earth.  Work continues with colleagues and collaborators on paleoclimates and future Earth scenarios.
+                                   </p>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h4>Modeling Extrasolar Planets</h4>
+                        <div class="card-body">
+                            <figure class="card-figure">
+                                <img src="/files/K2-18b.gif" alt="">
+                            </figure>
+                            <div class="card-text-content">
+                                <p><i>Using 3D climate models to map the habitable zone and predict observations.</i> I use 3D climate models to explore extrasolar planets
+                                    and the so-called "habitable zone." Studies have included specific planet targets 
+                                    (<a href="https://doi.org/10.3847/PSJ/ac3f3d" target="_blank" rel="noopener noreferrer">TRAPPIST-1 e</a>,
+                                    <a href="https://doi.org/10.3847/1538-3881/aba4b4" target="_blank" rel="noopener noreferrer">TOI-700 d </a>,
+                                    <a href="https://doi.org/10.3847/1538-3881/ae0e20" target="_blank" rel="noopener noreferrer">GJ 251 c </a
+                                   , and  <a href="https://doi.org/10.3847/1538-3881/abcbfd" target="_blank" rel="noopener noreferrer">Kepler-1649 c </a>,
+                                   generic <a href="https://doi.org/10.3847/1538-4357/ab184a" target="_blank" rel="noopener noreferrer">tidally locked terrestrial planets </a> 
+                                   around M-dwarf stars, and
+                                   <a href="https://doi.org/10.1029/2020JE006576" target="_blank" rel="noopener noreferrer">circumbinary planets </a>.
+                                    My work has been foundational in mapping the 
+                                    <a href="https://doi.org/10.3847/1538-4357/aa5ffc" target="_blank" rel="noopener noreferrer">habitable zone </a> and exploring concepts on the 
+                                    runaway and moist greenhouse processes, and cloud-convection feedbacks. 
+                                    As always, my end-goal is to connect simulations of planetary atmospheres to observable metrics. 
+                                </p>
+                                </div>
+                        </div>
+                    </div>
+                
+                </div> </div> </section>
+        
+        <section id="publications">
+             <section class="container"> 
+                <h2>publications</h2>
+                <p><a href="https://scholar.google.com/citations?user=oqRKUVcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="See my Google Scholar Profile">
+               View my Google Scholar Profile</a> </p>
+                <hr>
+                
+                <h3>In preparation</h3>
+                <ul>
+                    <li>[73] Lincowski, A.P., Meadows, V.S., Crisp, D., <b>Wolf, E.T.</b>, and Robinson, T.D. "Bridging Two Worlds: Introduction of a New Two-Column Climate Model for Terrestrial Exoplanet Studies and Application to JWST Observations of TRAPPIST-1 b and c." In preparation for Fall 2025 submission.</li>
+                    <li>[72] Way, M.J., <b>Wolf, E.T.</b>, and Wilmes, S.-B. "Killing the Faint Young Sun Paradox: an exploration of Foarchean climate." In preparation for Fall 2025 submission.</li>
+                </ul>
+    
+                <h3>Submitted, in revision, or in press</h3>
+                <ul>
+                    <li>[71] Haqq-Misra, J. and <b>Wolf, E.T.</b> "Maximum Lifetime of the Vegetative Biosphere." Submitted to <i>JGR-Atmospheres</i>.</li>
+                    <li>[70] Wogan, N.F., Batalha, B.E., Zahnle, K., Krissansen-Totten, Catling, D.C., <b>Wolf, E.T.</b>, Robinson, T.D. Meadows, V., Arney, G., and Domagal-Goldman, S. "The Open-Source Photochem Code: A General Chemical and Climate Model for Interpretting (Exo) Planet Observations." Accepted at <i>The Planetary Science Journal</i>.</li>
+                    <li>[69] Yang, H., <b>Wolf, E.T.</b>, Liu, C.-C. Zhan, Y., Toon, O.B., and Abbot, D.S. "The effect of planetary rotation period on clouds in a GCM with a bin microphysics model." Submitted to <i>The Astrophysical Journal</i>.</li>
+                    <li>[68] Airapetian, V., Kobayashi, K., Udo, T., Mouri, S., Kebukawa, Y., Fukuda, H., Oguri, Y., Way, M., Gronoff, G., and <b>Wolf,E.T.</b> "Production Rates of Nitrous Oxide and Biomolecules in Primitive Atmospheres of Early Earth and Rocky Exoplanets." Submitted to <i>Nature Astronomy</i>.</li>
+                    <li>[67] Fuji, Y., Angerhausen, D., Matsuo and <b>Wolf, E.T.</b> "Probing thermal gradient of habitable-zone rocky planets with direct imaging as an anti-indicator of global surface ocean." Submitted to <i>The Astrophysical Journal</i>.</li>
+                </ul>
+            <h3>First author refereed</h3>
+            <ul>
+                <li>[66] <b>Wolf, E.T.</b>, Schwieterman, E.W., Haqq-Misra, J., Fauchez, T.J., et al. (2025) "Chemistry, Climate, and Transmission Spectra of Transmission Spectra of TRAPPIST-1e Explored with a Multimodel Sparse Sampled Ensemble." <i>The Planetary Science Journal</i> 6:231 (30pp), <a href="https://doi.org/10.3847/PSJ/ae031e" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/PSJ/ae031e</a></li>
+                <li>[65] <b>Wolf, E.T.</b>, Kopparapu, R., Haqq-Misra, J. and Fauchez, T.J. (2022) "ExoCAM: A 3D Climate Model for Exoplanet Atmospheres." <i>The Planetary Science Journal THAI Focus Issue</i>, 3:7 (17pp), <a href="https://doi.org/10.3847/PSJ/ac3f3d" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/PSJ/ac3f3d</a></li>
+                <li>[64] <b>Wolf, E.T.</b>, Haqq-Misra, J., Kopparapu, R.K., Fauchez, T., Welsh, W.F., Kane, S.R., Kostov, V., and Siegfried, E. (2020) "The Resilience of Habitable Climates Around Circumbinary Stars." <i>J. Geophys. Res. Planets.</i> 125, e2020JE006576, <a href="https://doi.org/10.1029/2020JE006576" target="_blank" rel="noopener noreferrer">https://doi.org/10.1029/2020JE006576</a></li>
+                <li>[63] <b>Wolf, E.T.</b>, Kopparapu, R.K., and Haqq-Misra, J. (2019) "Simulated Phase Dependent Water Vapor and Cloud Spectra of Synchronously Rotating Aquaplanets." <i>The Astrophysical Journal</i> 877:35 (18 pp), <a href="https://doi.org/10.3847/1538-4357/ab184a" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ab184a</a></li>
+                <li>[62] <b>Wolf, E.T.</b>, Haqq-Misra, J., and Toon, O.B. (2018) "Evaluating Climate Sensitivity to $CO_{2}$ Across Earth's History." <i>JGR-Atmospheres</i>, 123, 21, 11861-11874, <a href="https://doi.org/10.1029/2018JD029262" target="_blank" rel="noopener noreferrer">https://doi.org/10.1029/2018JD029262</a></li>
+                <li>[61] <b>Wolf, E.T.</b> (2017) "Assessing the Habitability of the TRAPPIST-1 System Using a 3D Climate Model." <i>The Astrophysical Journal Letters</i> 839:L.1 (6pp), <a href="https://doi.org/10.3847/2041-8213/aa693a" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/2041-8213/aa693a</a></li>
+                <li>[60] <b>Wolf, E.T.</b>, Shields, A.L., Kopparapu, R.K., Haqq-Misra, J., and Toon, O.B. (2017) "Constraints on Climate and Habitability for Earth-like Exoplanets Determined from a General Circulation Model." <i>The Astrophysical Journal</i> 837:107 (11pp), <a href="https://doi.org/10.3847/1538-4357/aa5ffc" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/aa5ffc</a></li>
+                <li>[59] <b>Wolf, E.T.</b> and Toon, O.B. (2015) "The evolution of habitable climates under the brightening Sun." <i>JGR-Atmospheres</i> 120(12) 5775-5794, <a href="https://doi.org/10.1002/2015JD023302" target="_blank" rel="noopener noreferrer">https://doi.org/10.1002/2015JD023302</a></li>
+                <li>[58] <b>Wolf, E.T.</b> and Toon, O.B. (2014) "Controls on the Archean climate system investigated with a global climate model." <i>Astrobiology</i> 14(3) 241-252, <a href="https://doi.org/10.1089/ast.2013.1112" target="_blank" rel="noopener noreferrer">https://doi.org/10.1089/ast.2013.1112</a></li>
+                <li>[57] <b>Wolf, E.T.</b> and Toon, O.B. (2014) "Delayed onset of runaway and moist greenhouse climates for Earth." <i>Geophys. Res. Lett.</i> 41, 1, 167-172, <a href="https://doi.org/10.1002/2013GL058376" target="_blank" rel="noopener noreferrer">https://doi.org/10.1002/2013GL058376</a></li>
+                <li>[56] <b>Wolf, E.T.</b> and Toon, O.B. (2013) "Hospitable Archean Climates Simulated by a General Circulation Model." <i>Astrobiology</i> 13(7) 1-18, <a href="https://doi.org/10.1089/ast.2012.0936" target="_blank" rel="noopener noreferrer">https://doi.org/10.1089/ast.2012.0936</a></li>
+                <li>[55] <b>Wolf, E.T.</b> and Toon O.B. (2010) "The Hazy Details of Early Earth's Atmosphere Response." <i>Science</i> 330, 754-755, <a href="https://www.science.org/doi/10.1126/science.330.6005.754-b" target="_blank" rel="noopener noreferrer">https://www.science.org/doi/10.1126/science.330.6005.754-b</a></li>
+                <li>[54] <b>Wolf, E.T.</b> and Toon O.B. (2010) "Fractal Organic Hazes Provided an Ultraviolet Shield for Early Earth." <i>Science</i> 328, 1266-1268, <a href="https://www.science.org/doi/10.1126/science.1183260" target="_blank" rel="noopener noreferrer">https://www.science.org/doi/10.1126/science.1183260</a></li>
+            </ul>
+
+            <h3>Second author refereed</h3>
+            <ul>
+                <li>[53] Shields, A.L., <b>Wolf, E.T.</b>, Agol, E., and Tremblay, P.E. (2025) "Increased Surface Temperatures of Habitable White Dwarf Worlds Relative to Main-sequence Exoplanets." <i>The Astrophysical Journal</i>, 979:45 (13 pp), <a href="https://doi.org/10.3847/1538-4357/ad9827" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ad9827</a></li>
+                <li>[52] Haqq-Misra, J., <b>Wolf, E.T.</b>, Fauchez, T.J., and Kopparapu, R.K. (2024) "Interpolation and synthesis of sparse samples in exoplanet atmospheric modeling." <i>The Planetary Science Journal</i> 5, 140, <a href="https://doi.org/10.3847/PSJ/ad50a7" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/PSJ/ad50a7</a></li>
+                <li>[51] Haqq-Misra, J., <b>Wolf, E.T.</b>, Fauchez, T.J., Shields, A.L., and Kopparapu, R.K. (2022) "The SparseAtmospheric Model Sampling Analysis (SAMOSA) Intercomparison: Motivations and Protocol version 1.0: A CUISINES Model Intercomparison." <i>The Planetary Science Journal</i> 3:260 (10pp), <a href="https://doi.org/10.3847/PSJ/ac9479" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/PSJ/ac9479</a></li>
+                <li>[50] Suissa G., <b>Wolf, E.T.</b>, Kopparapu, R.k., Villanueva, G.L., Fauchez, T., Mandell, A.M., Arney, G., Gilbert, E.A., Schlieder, J.E., Barclay, T., Quintana, E.V., Lopez, E.D., Rodriguez, J.E., and Vanderburg, A. (2020) "The First Habitable Zone Earth-size Planet from TESS. III: Climate States and Characterization Prospects for TOI-700 d." <i>The Astronomical Journal</i>, 160:118 (19pp), <a href="https://doi.org/10.3847/1538-3881/aba4b4" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-3881/aba4b4</a></li>
+                <li>[49] Charnay, B., <b>Wolf, E.T.</b>, Marty, B. and Forget, F. (2020) "Is the Faint Young Sun Paradox for Earth Solved?" <i>Space Science Reviews</i> 216:90, <a href="https://doi.org/10.1007/s11214-020-00711-9" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/s11214-020-00711-9</a></li>
+                <li>[48] Haqq-Misra, J., <b>Wolf, E.T.</b>, Welsh, W., Kopparapu, R., Kostov, V., and Kane, S. (2019) "Constraining the Magnitude of Climate Extremes From Time-Varying Installation on a Circumbinary Terrestrial Planet." <i>Journal of Geophysical Research: Planets</i> 124, 12, 3231-3243, <a href="https://doi.org/10.1029/2019JE006222" target="_blank" rel="noopener noreferrer">https://doi.org/10.1029/2019JE006222</a></li>
+                <li>[47] Chen, H., <b>Wolf, E.T.</b>, Zhan, Z.., and Horton, D.E. (2019) "Habitability and Spectroscopic Observability of Warm M-dwarf Exoplanets Evaluated with a 3D Chemistry-Climate Model." <i>The Astrophysical Journal</i> 886:16, <a href="https://doi.org/10.3847/1538-4357/ab4f7e" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ab4f7e</a></li>
+                <li>[46] Badhan, M.A., <b>Wolf, E.T.</b>, Kopprapu, R.K., Kempton, E.M.-R., Arney, G., Domagal-Goldman, S.D., and Deming, D. (2019) "Stellar Activity Effects on Moist Habitable Terrestrial Atmospheres." <i>The Astrophysical Journal</i> 887:34 (11pp), <a href="https://doi.org/10.3847/1538-4357/ab32e8" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ab32e8</a></li>
+                <li>[45] Chen, H, <b>Wolf, E.T.</b>, Kopparapu, R., Domagal-Goldman, S., and Horton, D.E. (2018) "Biosignature Anisotropy Modeled on Temperate Tidally-Locked M-dwarf Planets." <i>The Astrophysical Journal Letters</i>, 868:L6, <a href="https://doi.org/10.3847/2041-8213/aaedb2" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/2041-8213/aaedb2</a></li>
+                <li>[44] Haqq-Misra, J., <b>Wolf, E.T.</b>, Joshi, M., Zhang, X., and Kopparapu, R.K. (2018) "Demarcating circulation regimes of synchronously rotating terrestrial planets within the habitable zone." <i>The Astrophysical Journal</i> 852:67 (16 pp), <a href="https://doi.org/10.3847/1538-4357/aa9f1f" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/aa9f1f</a></li>
+                <li>[43] Kopparapu, R.K., <b>Wolf, E.T.</b>, Arney, G., Batalha, N., Haqq-Misra, J., Grimm, S.L. and Heng, K. (2017) "Habitable Moist-Greenhouse Atmospheres Around Low Mass Stars." <i>The Astrophysical Journal</i> 845:5 (16pp), <a href="https://doi.org/10.3847/1538-4357/aa7cf9" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/aa7cf9</a></li>
+                <li>[42] Kopparapu, R.K., <b>Wolf, E.T.</b>, Haqq-Misra, J., Yang, J., Kasting, J.F., Meadows, V., Terrien, R., and Mahadevan, S. (2016) "The Inner Edge of the Habitable Zone for Synchronously Rotating Planets Around Low Mass Stars Using General Circulation Models." <i>The Astrophysical Journal</i> 819:84 (14pp), <a href="https://doi.org/10.3847/0004-637X/819/1/84" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/0004-637X/819/1/84</a></li>
+            </ul>
+
+            <h3>Other author refereed</h3>
+            <ul>
+                <li>[41] Goodis Gordon, K.E., Karalidi, T., Bott, K.M., Vancil, J., Millar-Blanchaer, M.A., Wogan, N.F., and <b>Wolf, E.T.</b> (2025) "Polarized Signatures of Variable Worlds: Modeling Heterogeneous Habitable Earth- and Early Mars-like (Exo)planets." <i>The Astrophysical Journal</i>, 993:36 (16pp), <a href="https://doi.org/10.3847/1538-4357/ae07df" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ae07df</a></li>
+                <li>[40] Beard, C., Robertson, P., Lubin, J., Mahadevan, S., Stefansson, G., Wright, J.T., <b>Wolf, E.T.</b>, et al. (2025) "Discovery of a Nearby Habitable Zone Super-Earth Candidate Amenable to Direct Imaging." <i>The Astrophysical Journal</i> 170:279 (27pp) <a href="https://doi.org/10.3847/1538-3881/ae0e20" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-3881/ae0e20</a></li>
+                <li>[39] Tsigaridis, K., Ackerman, A.S., Aleinov, I., Chandlar, M.A., Clune, T.L., Colose, C.M., Del Genio, A.D., Kelley, M., Kiang, N., Leboisseteir, A., Perlwitz, J.P., Ruedy, R.A., Russell, G.L., Sohl, L.E., Way, M.J., and <b>Wolf, E.T.</b> (2025) "ROCKE-3D 2.0: an updated general circulation model for simulating the climates of rocky planets." <i>Geoscientific Model Development</i> 18, 5825-5871, <a href="https://doi.org/10.5194/gmd-18-5825-2025" target="_blank" rel="noopener noreferrer">https://doi.org/10.5194/gmd-18-5825-2025</a></li>
+                <li>[38] Hammond, T., Komacek, T.D., Kopparapu, R., Fauchez, T.J., Mandell, A., <b>Wolf, E.T.</b>, Kofman, V., Kane, S.R., Johnson, T.M., Desai, A., Arney, G., and Crouse, J. (2025) "The climates and thermal emission spectra of prime nearby temperate rocky exoplanet targets." <i>The Planetary Science Journal</i>, 984:181 (16pp), <a href="https://doi.org/10.3847/1538-4357/adc73b" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/adc73b</a></li>
+                <li>[37] Deitrick, R., Goldblatt, C., <b>Wolf, E.T.</b>, and Robinson, T.D. (2025) "Oxidizing ExoCAM: Introducing the Radiative Effects of Oxygen and Ozone into the ExoCAM General Circulation Model." <i>The Planetary Science Journal</i>, 6:8 (15pp), <a href="https://doi.org/10.3847/psj/ad9900" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/psj/ad9900</a></li>
+                <li>[36] Venkatesan, V., Shields, A.L., Deitrick, R., <b>Wolf, E.T.</b>, and Rushby, A. (2025) "A One- Dimensional Energy Balance Model Parameterization for the Formation of CO2 Ice on the Surfaces of Eccentric Extrasolar Planets." <i>Astrobiology</i>, 25, 1, <a href="https://doi.org/10.1089/ast.2023.0103" target="_blank" rel="noopener noreferrer">https://doi.org/10.1089/ast.2023.0103</a></li>
+                <li>[35] Yang, H., Komacek, T.D., Toon, O.B., <b>Wolf, E.T.</b>, Robinson, T.D., Chael, C., and Abbot, D.S. (2024) "Impact of Planetary Parameters on Water Cloud Microphysics." <i>The Astrophysical Journal</i>, 966, 152, <a href="https://doi.org/10.3847/1538-4357/ad3242" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ad3242</a></li>
+                <li>[35] Eager-Nash, J.K., Mayne, N.J., Nicholson, A.E., Prins, J.E., Young, O.C.F., Daines, S.J., Sergeev, D.E., Lambert, F.H., Manners, J., Boutle, I.A., <b>Wolf, E.T.</b>, Kamp, I.E.E., Kohary, K. and Lenton, T.M. (2023) "3D climate simulations of the Archean find that methane has a strong cooling effect at high concentrations." <i>JGR-Atmospheres</i>, 128, e2022JD037544, <a href="https://doi.org/10.1029/2022JD037544" target="_blank" rel="noopener noreferrer">https://doi.org/10.1029/2022JD037544</a></li>
+                <li>[34] Lobo, A.H., Shields, A.L, Palubski, I.Z.., and <b>Wolf, E.T.</b> (2023) "Terminator Habitability: The Case for Limited Water Availability on M-dwarf Planets." <i>The Astrophysical Journal</i>. 945:161 (13pp), <a href="https://doi.org/10.3847/1538-4357/aca970" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/aca970</a></li>
+                <li>[33] Kossakowski, D. Kurster, M., Trifonov, T. et al. including <b>Wolf, E.T.</b> (2023) "The CARMENES search for exoplanets around M dwarfs. Wolf 1069 b: Earth-mass planet in the habitable zone of a nearby very low mass star." <i>Astron. Astrophys.</i> 670, A84, <a href="https://doi.org/10.1051/0004-6361/202245322" target="_blank" rel="noopener noreferrer">https://doi.org/10.1051/0004-6361/202245322</a></li>
+                <li>[32] Christie, D.A., Lee, E.K.H., Innes, H., Noti, P.A., Charnay, B. et al. including <b>Wolf, E.T.</b> (2022) "CAMEMBERT A Mini-Neptunes GCM Intercomparison, Protocol Version 1.0. A CUISINES Model Intercomparison Project." <i>The Planetary Science Journal</i>, 3, 261, <a href="https://doi.org/10.3847/PSJ/ac9dfe" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/PSJ/ac9dfe</a></li>
+                <li>[31] Turbet, M., Fauchez, T.J., Sergeev, D.E., Boutle, I.A., Tsigaridis, K., Way, M.J., <b>Wolf, E.T.</b>, Domagal-Goldman, S.D., Forget, F., Haqq-Misra, J., Kopparapu, R.K., Lambert, F.H., Manners, J., Mayne, N.J., and Sohl, L. (2022) "The TRAPPIST-1 Habitable Atmosphere Intercomparison (THAI). Part I: Dry Cases - The fellowship of the GCMs." <i>The Planetary Science Journal</i> 3:211 (17pp), <a href="https://doi.org/10.3847/PSJ/ac6cf0" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/PSJ/ac6cf0</a></li>
+                <li>[30] Sergeev, D.E., Fauchez, T.J., Turbet, M., Boutle, I.A., Tsigaridis, K., Way, M.J., <b>Wolf, E.T.</b>, Domagal-Goldman, S.D., Forget, F., Haqq-Misra, J., Kopparapu, R.K., Lambert, F.H., Manners, J., and Mayne, N.J. (2022) "The TRAPPIST-1 Habitable Atmosphere Intercomparison (THAI). Part II: Moist Cases - The Two Waterworlds." <i>The Planetary Science Journal</i>, 3:212 (26pp), <a href="https://doi.org/10.3847/PSJ/ac6cf2" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/PSJ/ac6cf2</a></li>
+                <li>[29] Fauchez, T.J., Villaneuva, G. Sergeev, D.E.,, Turbet, M., Boutle, I.A., Tsigaridis, K., Way, M.J., <b>Wolf, E.T.</b>, Domagal-Goldman, S.D., Forget, F., Haqq-Misra, J., Kopparapu, R.K., Lambert, F.H., Manners, J., and Mayne, N.J. (2022) "The TRAPPIST-1 Habitable Atmosphere Intercomparison (THAI). Part III: Simulated Observables - The return of the spectrum." <i>Planetary Science Journal</i> 3:213 (17pp), <a href="https://doi.org/10.3847/PSJ/ac6cf1" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/PSJ/ac6cf1</a></li>
+                <li>[28] Vidaurri, M.R., Bastelberger, S.T., <b>Wolf, E.T.</b>, Domagal-Goldman, S., Kopparapu, R.K. (2022) "The Outer Edge of the Venus Zone Arouund Main Sequence Stars." <i>The Planetary Science Journal</i>, 3, 137, <a href="https://doi.org/10.3847/PSJ/ac68e2" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/PSJ/ac68e2</a></li>
+                <li>[27] Guzewich, S. Way, M., Aleinov, I., <b>Wolf, E.T.</b>, Del Genio, A.D., Wordsworth, R., & Tsigaridis, K. (2021) "3D Simulations of the Early Martian Hydrological Cycle Mediated by a $H_{2}-CO_{2}$ Greenhouse." <i>Journal of Geophysical Research: Planet</i>, 126, e2021JE006825, <a href="https://doi.org/10.1029/2021JE006825" target="_blank" rel="noopener noreferrer">https://doi.org/10.1029/2021JE006825</a></li>
+                <li>[26] Colose, C., Haqq-Misra, J., Del Genio, A.D., Barnes, A.D., <b>Wolf, E.T.</b>, Way, M., & Ruedy, R. (2021) "Effects of Spin-Orbit Resonances and Tidal Heating on the Inner Edge of the Habitable Zone." <i>The Astrophysical Journal</i>, 921:25 (33pp), <a href="https://doi.org/10.3847/1538-4357/ac135c" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ac135c</a></li>
+                <li>[25] Fauchez, T., Turbet, M., Sergeev, D., et al. including <b>Wolf, E.T.</b> (31 authors total). (2021) "TRAPPIST Habitable Atmosphere Intercomparison (THAI) workshop report." <i>The Planetary Science Journal THAI Focus Issue</i>, 2:106 (28pp), <a href="https://doi.org/10.3847/PSJ/abf4df" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/PSJ/abf4df</a></li>
+                <li>[24] Kane, S.R., Li, Z., <b>Wolf, E.T.</b>, Osterberg, C. and Hill, M.L. (2021) "Eccentricity Driven Climate Effect in the Kepler-1649 System." <i>The Astronomical Journal</i>, 161:31 (9pp), <a href="https://doi.org/10.3847/1538-3881/abcbfd" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-3881/abcbfd</a></li>
+                <li>[23] Rushby, A.J., Shields, A.L., <b>Wolf, E.T.</b>, Lague, M., and Burgasser, A. (2021) "The Effect of Land-Albedo Feedback on the climate of Land-Dominated Planets in the TRAPPIST-1 System." <i>The Astrophysical Journal</i>, 904:124 (14pp), <a href="https://doi.org/10.3847/1538-4357/abbe04" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/abbe04</a></li>
+                <li>[22] Chen, H., Zhan, Z, Youngblood, A., <b>Wolf, E.T.</b>, Feinstein, A.D and Horton, D.E. (2021) "Persistence of Flare-Driven Atmospheric Chemistry on Rocky Habitable Zone Worlds." <i>Nature Astronomy</i> 5, 298-310, <a href="https" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41550-020-01264-1</a></li>
+                <li>[21] Turbet, M., Bolmont, E., Bourrier, V., Demory, B.-O., Leconte, J. and <b>Wolf, E.T.</b> (2020) "A Review of Possible Planetary Atmospheres in the TRAPPIST-1 System." <i>Space Science Reviews</i>, 216, 100, <a href="https://doi.org/10.1007/s11214-020-00719-1" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/s11214-020-00719-1</a></li>
+                <li>[20] Gilbert, E.W., Barclay, T., Schlieder, J.E., Quintana, E.V., Hord, B.J., Kostov, V.B., Lopez, E.D. et al., including <b>Wolf, E.T.</b> (2020) "The First Habitable Zone Earth-size Planet from TESS. I: Validation of the TOI-700 System." <i>The Astronomical Journal</i>, 160, 3, <a href="https://doi.org/10.3847/1538-3881/aba4b2" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-3881/aba4b2</a></li>
+                <li>[19] Kostov, V.B., Orosz, J.A., Feinstein, A.D., Welsh, W.F., Cukier, W. et al., including <b>Wolf, E.T.</b> (2020) "ΤΟΙ-1338: TESS' First Transiting Circumbinary Planet." <i>The Astrophysical Journal</i>, 159, 253 (26pp), <a href="https://doi.org/10.3847/1538-3881/ab8a48" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-3881/ab8a48</a></li>
+                <li>[18] Suissa, G., Mandell, A., <b>Wolf, E.T.</b>, Villanueva, G.L., Fauchez, T., and Kopparapu, R. (2020) "Dim Prospects for Transmission Spectra of Ocean Earths Around M Stars." <i>The Astrophysical Journal</i> 891, 57, <a href="https://doi.org/10.3847/1538-4357/ab72f9" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ab72f9</a></li>
+                <li>[17] Fauchez, T., Turbet, M, <b>Wolf, E.T.</b>, Boutle, I., Way, M.J., Del Genio, A.D., Mayne, N.J., Tsigaridis, K., Kopparapu, R.K., Yang, J., Forget, F., Mandel, A., and Domagal-Goldman, S.D. (2020) "TRAPPIST-1 Habitable Atmosphere Intercomparison (THAI): motivations and protocol version 1.0." <i>Geosci. Model Dev.</i>, 13, 707-716, <a href="https://doi.org/10.5194/gmd-13-707-2020" target="_blank" rel="noopener noreferrer">https://doi.org/10.5194/gmd-13-707-2020</a></li>
+                <li>[16] Komacek, T., Fauchez, T., <b>Wolf, E.T.</b>, and Abbot D.S. (2020) "Clouds will likely prevent the detection of water vapor in JWST transmission spectra of terrestrial exoplanets." <i>The Astrophysical Journal</i> 888:L20 (6pp), <a href="https://doi.org/10.3847/2041-8213/ab6200" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/2041-8213/ab6200</a></li>
+                <li>[15] Hu, R., Peterson, L, and <b>Wolf, E.T.</b> (2020) "O2 and CO-rich Atmospheres for Potentially Habitable Environments on TRAPPIST-1 Planets." <i>The Astrophysical Journal</i> 888:122 (15pp), <a href="https://doi.org/10.3847/1538-4357/ab5f07" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ab5f07</a></li>
+                <li>[14] Fauchez, T., Turbet, M, Villanueva, G.L., <b>Wolf, E.T.</b>, Arney, G., Kopparapu, R.K., Lincowski, A., Mandell, A., deWit, J., Pidhorodetska, D., Domagal-Goldman, S.D., and Stevenson, K.B. (2019) "Impact of Clouds and Hazes in the Simulates JWST Transmission Spectra of Habitable Planets in the TRAPPIST-1 System." <i>The Astrophysical Journal</i> 887:194, <a href="https://doi.org/10.3847/1538-4357/ab5862" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ab5862</a></li>
+                <li>[13] Cukier, W., Kopprarapu, R., Kane, S.R., Welsh, W., <b>Wolf, E.T.</b>, Kostov, V., and Haqq-Misra, J. (2019) "Habitable Zone Boundaries for Circumbinary Planets." <i>Publications of the Astronomical Society of the Pacific</i> 131:124402 (5pp), <a href="https://doi.org/10.1088/1538-3873/ab50cb" target="_blank" rel="noopener noreferrer">https://doi.org/10.1088/1538-3873/ab50cb</a></li>
+                <li>[12] Komacek, T.D., Jansen, M.F., <b>Wolf, E.T.</b>, and Abbot, D.S. (2019) "Scaling Relations for Terrestrial Exoplanet Atmospheres from Baroclinic Criticality." <i>The Astrophysical Journal</i> 883:46 (8pp), <a href="https://doi.org/10.3847/1538-4357/ab3980" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ab3980</a></li>
+                <li>[11] Yu, P., Toon, O.B., Bardeen, C.G., Zhu, Y., Rosenlof, K.H., Portmann, R.W., Thornberry, T.D., Gao, R.-S., Davis, S.M., <b>Wolf, E.T.</b>, de Gouw, J., Peterson, D.A., Fromm, M.D., and Robock, A. (2019) "Black carbon lofts wildfire smoke high in to the stratosphere to form a persistent plume." <i>Science</i> 365, 587-590, <a href="https" target="_blank" rel="noopener noreferrer">https://doi.org/10.1126/science.aax1748</a></li>
+                <li>[10] Aleinov, I., Harman, C., Tsigardis, C., Way, M.J., <b>Wolf, E.T.</b>, and Gronoff, G. (2019) "Modeling a Transient Secondary Paleolunar Atmosphere: 3-D Simulations and Analysis" <i>Geophysical Research Letters</i> 46, 10, 5107-5116, <a href="https://doi.org/10.1029/2019GL082494" target="_blank" rel="noopener noreferrer">https://doi.org/10.1029/2019GL082494</a></li>
+                <li>[9] Yang, J., Leconte, J., <b>Wolf, E.T.</b>, Merlis, T., Koll, D.D.B., Forget, F., and Abbot, D.S. (2019) "Simulations of Water Vapor and Clouds on Rapidly Rotating and Tidally Locked Planets: A 3D Model Intercomparison." <i>The Astrophysical Journal</i> 875, 46, <a href="https://doi.org/10.3847/1538-4357/ab09f1" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-4357/ab09f1</a></li>
+                <li>[8] Adams, A.D., Boos, W.R. and <b>Wolf, E.T.</b> (2019) "Aquaplanet Models on Eccentric Orbits: Effects of Rotation Rate on Observables." <i>The Astrophysical Journal</i> 157,189, <a href="https://doi.org/10.3847/1538-3881/ab107f" target="_blank" rel="noopener noreferrer">https://doi.org/10.3847/1538-3881/ab107f</a></li>
+                <li>[7] Haqq-Misra, J., Kopparapu, R.K., and <b>Wolf, E.T.</b> (2017) "Why do we find ourselves around a yellow star instead of a red star?" <i>International Journal of Astrobiology</i> 1-10, <a href="https://doi.org/10.1098/rsta.1983.0096" target="_blank" rel="noopener noreferrer">https://doi.org/10.1098/rsta.1983.0096</a></li>
+                <li>[6] Arney, G., Meadows, V.S., Domagal-Goldman, S.D., Deming, D., Robinson, T., Tovar, G., <b>Wolf, E.T.</b>, and Schwieterman, E. (2017) "Pale Orange Dots: The Detectability of Organic Haze on Earthlike Exoplanets." <i>The Astrophysical Journal</i> 836:49 (19pp), <a href="https://iopscience.iop.org/article/10.3847/1538-4357/836/1/49" target="_blank" rel="noopener noreferrer">https://iopscience.iop.org/article/10.3847/1538-4357/836/1/49</a></li>
+                <li>[5] Arney, G., Domagal-Goldman, S., Meadows, V., <b>Wolf, E.T.</b>, Schwieterman, E., and Claire, M. "The PaleOrange Dot: The Spectrum and Climate of Hazy Archean Earth." (2016) <i>Astrobiology</i> 16(11), 1-27, <a href="https://doi.org/10.1089/ast.2015.1422" target="_blank" rel="noopener noreferrer">https://doi.org/10.1089/ast.2015.1422</a></li>
+                <li>[4] Yang, J., Leconte, J., <b>Wolf, E.T.</b>, Goldblatt, C., Feldl, N., Merlis, T., Wang, Y., Koll, D.D.B., Ding, F., Forget, F., Toon, O.B., and Abbot, D.S. (2016) "Differences in Water Vapor Radiative Transfer Among 1D Models Can Significantly Affect the Inner Edge of the Habitable Zone." <i>The Astrophysical Journal</i> 826:222 (11pp), <a href="https://iopscience.iop.org/article/10.3847/0004-637X/826/2/222" target="_blank" rel="noopener noreferrer">https://iopscience.iop.org/article/10.3847/0004-637X/826/2/222</a></li>
+                <li>[3] Harman, C.E., Kasting, J.F. and <b>Wolf, E.T.</b> (2013) "Atmospheric Production of Glycolaldehyde Under Hazy Prebiotic Conditions." <i>Origins of Life and Evolution of Biospheres</i> 43 77-98, <a href="https://doi.org/10.1007/s11084-013-9332-7" target="_blank" rel="noopener noreferrer">https://doi.org/10.1007/s11084-013-9332-7</a></li>
+            </ul>
+
+            <h3>Other written works</h3>
+            <ul>
+                <li>[2] <b>Wolf, E.T.</b>, Kopparapu, R.K., Airapetian, V., Fauchez, T., Guzewich, S., Kane, S.R., Pidhorodetska, D., Way, M.J. and 22 co-signors. (2020) "The Importance of 3D General Circulation Models for Characterizing the Climate Habitability of Terrestrial Extrasolar Planets." <i>Astro2020 Science White Paper</i>, <a href="https://arxiv.org/abs/1903.05012" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1903.05012</a></li>
+                <li>[1] Kopparapu, R.K., <b>Wolf, E.T.</b>, and Meadows, V.S. (2020) "Characterizing Exoplanet Habitability." Book Chapter in <i>Planetary Astrobiology, University of Arizona Press, Space Science Series</i>, <a href="https://arxiv.org/abs/1911.04441" target="_blank" rel="noopener noreferrer">https://arxiv.org/abs/1911.04441</a></li>
+            </ul>
+                </section>
+        </section>
+
+        <section id="aboutme">
+            <section class="container"> 
+                <h2>about me</h2>
+          <!--       <figure class="float-right">
+                    <img src="/images/IMG_4101.jpg" alt="A photo of me and my dog.">
+                    <figcaption>Me and my boy.</figcaption>
+                </figure> -->
+                <p>I'm lucky to call the mountains of <b>Breckenridge, Colorado</b> my home where I live with my wife and our two Giant Schnauzers.</p>
+                <p>Living at 9,600 feet provides a great backdrop for my main hobbies: skiing in the winter and mountain biking in the summer.  I also recently started playing tennis again after
+                    a 20 year break, I ceaselessly listen to music (electronic and '90s), and I dabble in investing, philosophy, meditation, yoga, travel, reading, and experiencing life to its fullest.</p>
+                <div class="clear-float"></div>
+            </section>
+        </section>
     
     </main>
 
     <footer id="contact">
-       
             <div class="contact-icons"> 
                 <a href="mailto:storyofthewolf@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
                     <i class="fas fa-envelope"></i>
@@ -88,7 +310,6 @@
     </footer>
     
 <script src="script.js"></script>
-
 
 </body>
 </html>

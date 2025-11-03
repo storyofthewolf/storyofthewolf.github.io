@@ -1,133 +1,167 @@
 /* --- Global Styles --- */
-/* Import a modern font from Google Fonts (e.g., Lato, Open Sans, Roboto) */
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Mono&display=swap');
+/* NEW: Importing Lato (sans-serif) and Garamond (serif) */
+@import url('https://fonts.googleapis.com/css2?family=Garamond&family=Lato:wght@300;400;700&display=swap');
 
-:root { /* CSS Variables for easy theme changes */
-    --primary-color: #007bff; /* A nice blue for accents */
-    --secondary-color: #6c757d; /* A subtle gray */
-    --text-color: #343a40; /* Darker text */
-    --light-bg: #f8f9fa; /* Very light background */
-    --dark-bg: #2A4B7C; /* Dark background for header/footer */
-    --galaxy-blue: #2A4B7C; /*Galaxy Blue */
-    --endless-blue: #8DC2E1; /*Endless Blue */
-    --border-color: #dee2e6; /* Light border */
+/* === NEW: Light Theme Palette === */
+:root {
+    --accent-color: #0056b3;       /* Professional Blue for links & accents */
+    --accent-color-hover: #003d80; /* Darker blue for hover */
+    --text-color: #212529;         /* Near-black for body text (high readability) */
+    --text-color-secondary: #555;  /* Medium gray for secondary text */
+    --background-color: #f8f9fa;   /* Very light grey page background */
+    --header-bg: #ffffff;          /* White header */
+    --footer-bg: #343a40;          /* Dark grey footer */
+    --container-bg: #ffffff;       /* White content containers */
+    --container-border: #dee2e6;   /* Silver/grey border */
+
+    /* === NEW: Font Stack === */
     --font-sans: 'Lato', sans-serif;
-    --font-mono: 'Roboto Mono', monospace;
+    --font-serif: 'Garamond', serif; /* As requested */
 }
 
-/* Ensure HTML and Body take up full viewport height and remove default margins */
-/* added section for Dynamic Gradient */
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%; /* Important for body to fill the viewport */
-    overflow-x: hidden; /* Prevent horizontal scrollbar if elements slightly exceed width */
+    height: 100%;
+    overflow-x: hidden; 
+}
+
+html {
+    scroll-behavior: smooth; 
 }
 
 body {
-    font-family: var(--font-sans);
+    font-family: var(--font-sans); /* CHANGED: Default to Lato */
     line-height: 1.0;
     margin: 0;
     padding: 0;
-    background-color: var(--light-bg);
     color: var(--text-color);
-    scroll-behavior: smooth; /* Smooth scrolling for internal links */
-    
-    /* --- Dynamic Gradient Background --- */
-    background: linear-gradient(
-        180deg,          /* Angle of the gradient */
-        #2A4B7C,         /* Galaxy Blue */
-        #1A237E,         /* Dark Indigo / Deeper Blue */
-        #8DC2E1,         /* Patagonia Endless Blue */
-        #AAD8F5          /* Lighter Sky Blue */
-    );
-    background-size: 400% 400%; /* Make the gradient larger than the viewport */
-    animation: gradientShift 30s ease infinite alternate; /* Apply the animation */
-
-    /* Optional: Fallback background color if gradient doesn't load/supported */
-    background-color: #2A4B7C;
+    background-color: var(--background-color); /* CHANGED: Solid light background */
+    /* Removed background gradient and animation */
 }
 
-/* Class added by JS to prevent body scrolling when menu is open */
 body.no-scroll {
     overflow-y: hidden;
 }
 
-/* Define the animation for the gradient */
-@keyframes gradientShift {
-    0% {
-        background-position: 0% 50%; /* Start position */
-    }
-    50% {
-        background-position: 100% 50%; /* Move to right */
-    }
-    100% {
-        background-position: 0% 50%; /* Move back to start (for 'alternate' direction) */
-    }
-}
-
-
 /* --- Header --- */
-/* --- Other General Styles (adjust as needed) --- */
 header {
     padding: 20px;
-    /* Since body has the gradient, header will inherit/overlay it */
-    /* You might want a semi-transparent background for header/footer to ensure text readability */
-    background-color: rgba(0, 0, 0, 0.3); /* Slightly transparent black */
-    color: #fbf9f9; /* Lighter color for header text */
+    background-color: var(--header-bg);
+    color: var(--text-color); /* CHANGED */
+    border-bottom: 1px solid var(--container-border); 
 }
 
 h1 {
+    font-family: var(--font-sans); /* CHANGED: Was mono */
     font-size: 3rem;
-    /* IMPORTANT: Reset default margins on h1 */
     margin-top: 0;
-    margin-bottom: 0; /* If you need space below h1, add it to header's padding-bottom or h1's margin-bottom explicitly */
-    padding: 0; /* Reset default padding on h1 */
-
-    /* Text alignment (inherited from body, but can be set here specifically for h1) */
+    margin-bottom: 0;
+    padding: 0;
     text-align: center;
-    
-    color: inherit; /* Inherit color from parent (header) */
+    color: inherit;
+    font-weight: 700;
 }
 
 .tagline {
-    font-size: 1.3em;
-    color: #a0a0a0;
-    margin-top: 5px;
-    font-weight: 300; /* Lighter weight */
+    font-family: var(--font-sans); /* CHANGED: Was mono */
+    font-size: 1.1em;
+    color: var(--text-color-secondary); /* CHANGED */
+    margin-top: 10px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase; 
+    letter-spacing: 1.5px;
+}
+
+/* --- Top Navigation Bar (Desktop) --- */
+.top-nav {
+    background-color: var(--header-bg); 
+    border-bottom: 1px solid var(--container-border);
+    text-align: center;
+    padding: 10px 0;
+    display: none; 
+}
+
+.top-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.top-nav li a {
+    font-family: var(--font-sans); /* CHANGED: Was mono */
+    font-size: 1.1rem;
+    color: var(--text-color-secondary); /* CHANGED */
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.top-nav li a:hover {
+    color: var(--accent-color); /* CHANGED */
+    background-color: var(--background-color); /* CHANGED */
+    text-decoration: none;
 }
 
 
 /* --- Main Sections --- */
 main {
     padding: 10px 10px;
-    min-height: calc(100vh - 120px); /* Adjust to fit content between header/footer */
-    display: column; /* Use flexbox to vertically center container content if needed */
+    min-height: calc(100vh - 120px);
+    display: column;
     align-items: center;
     justify-content: center;
 }
 
-.container {
-    max-width: 960px; /* Constrain content width */
-    margin: auto auto; /* Center the container */
-    padding: 10px;
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for content */
-    border-radius: 10px;
-    backdrop-filter: blur(5px); /* Optional: Glassmorphism effect if browser supports */
-    -webkit-backdrop-filter: blur(5px); /* For Safari */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+main > section[id] {
+    padding-top: 25px; 
+    scroll-margin-top: 20px; 
+}
+main > section[id]:first-child {
+    padding-top: 0;
 }
 
 
-/* For the last section, remove bottom border */
-main section:last-of-type {
-    border-bottom: none;
+.container {
+    max-width: 960px;
+    margin: auto auto;
+    padding: 15px 25px; 
+    background-color: var(--container-bg); /* CHANGED */
+    border-radius: 8px; 
+    backdrop-filter: none; /* CHANGED */
+    -webkit-backdrop-filter: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* CHANGED: Softer shadow */
+    border: 1px solid var(--container-border);
+}
+
+main > section[id] .container {
+    margin-bottom: 25px; 
+}
+
+/* --- CV Download Button Wrapper --- */
+.cv-download {
+    margin-bottom: 25px; 
 }
 
 h2 {
+    font-family: var(--font-sans); /* CHANGED: Was mono */
     font-size: 2rem;
-    color: #AAD8F5; /* A lighter blue for subheadings */
-    font-style: italic;
+    color: var(--accent-color); 
+    font-style: normal; 
+}
+
+h3 {
+    font-family: var(--font-sans); /* CHANGED: Was mono */
+    font-size: 1.5rem;
+    color: var(--text-color); /* CHANGED */
+    font-weight: 700;
 }
 
 
@@ -136,59 +170,188 @@ h2 {
 p {
     font-size: 1.1rem;
     line-height: 1.6;
-    color: #e0e0e0; /* A soft white for paragraphs */
+    color: var(--text-color);
 }
 
 ul, ol {
-    padding-left: 25px; /* Indent lists */
+    padding-left: 25px;
 }
 
 li {
     margin-bottom: 10px;
-}
-
-#Publications ul li {
-    padding-left: 3em; /* This indents all lines */
-    text-indent: -3em;  /* This pulls only the first line back */
+    line-height: 1.5; 
 }
 
 a {
-    color: var(--endless-blue);
+    color: var(--accent-color); 
     text-decoration: none;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #dfe5eb; 
+    color: var(--accent-color-hover); /* CHANGED */
     text-decoration: underline;
 }
 
+hr {
+    border: 0;
+    border-top: 1px solid var(--container-border);
+    margin: 20px 0;
+}
+
+/* --- Indented List Specifics --- */
+#publications .container ul li,
+#highlights .container ul li {
+    font-family: var(--font-serif); /* NEW: Set Garamond font */
+    font-size: 1.1rem; /* NEW: Slightly larger for serif readability */
+    color: var(--text-color-secondary); /* NEW: Softer text for lists */
+    padding-left: 3em; 
+    text-indent: -3em;  
+    list-style-type: none; 
+}
+
+/* Make links in Garamond list bold and match text color */
+#publications .container ul li a,
+#highlights .container ul li a {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+#publications .container ul li a:hover,
+#highlights .container ul li a:hover {
+    color: var(--accent-color-hover);
+}
+
+
+/* ================================= */
+/* --- Project Card Styling --- */
+/* ================================= */
+
+.project-grid {
+    display: flex; 
+    flex-direction: column; 
+    gap: 25px; 
+}
+
+.project-card {
+    background: var(--container-bg);
+    border: 1px solid var(--container-border);
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* CHANGED: Softer shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px; 
+}
+
+.project-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* CHANGED: Softer shadow */
+}
+
+.project-card h4 {
+    font-family: var(--font-sans); /* CHANGED: Was mono */
+    font-size: 1.3rem;
+    color: var(--accent-color); /* CHANGED */
+    margin-top: 0;
+    margin-bottom: 15px; 
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+}
+
+.card-figure {
+    flex: 1; 
+    margin: 0; 
+}
+
+.card-figure img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover; 
+    border-radius: 8px;
+    border: 1px solid var(--container-border);
+}
+
+.card-text-content {
+    flex: 2; 
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 0; 
+    margin-bottom: 20px;
+    flex-grow: 1; 
+    color: var(--text-color-secondary); /* CHANGED: Softer text */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: #ffffff; /* CHANGED: White text */
+    font-family: var(--font-sans); /* CHANGED: Was mono */
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: auto; 
+    align-self: flex-start; 
+}
+
+.btn:hover {
+    background-color: var(--accent-color-hover); /* CHANGED */
+    color: #ffffff;
+    text-decoration: none;
+    transform: scale(1.03);
+}
+
+/* --- Responsive layout for project cards --- */
+@media (max-width: 600px) {
+    .card-body {
+        flex-direction: column; 
+    }
+    
+    .card-text-content,
+    .card-figure {
+        flex-basis: 100%;
+    }
+}
+
+/* =================================== */
+/* --- End Project Card Styling ---    */
+/* =================================== */
 
 
 /* --- Menu Toggle Button (Mobile) --- */
-/* Styles for the hamburger menu toggle button */
 .menu-toggle-btn {
-    position: fixed; /* Stays in place when scrolling */
+    position: fixed;
     top: 20px;
     right: 20px;
-    z-index: 1001; /* Ensure it's above other content and the sidebar when closed */
-    background: #8DC2E1; /* Endless Blue for the button */
-    color: #1A237E; /* Dark text for button */
+    z-index: 1001; 
+    background: var(--accent-color); /* CHANGED */
+    color: #ffffff; /* CHANGED */
     border: none;
-    border-radius: 50%; /* Make it round */
+    border-radius: 50%;
     width: 50px;
     height: 50px;
     font-size: 1.8rem;
-    display: flex;
+    display: flex; 
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* CHANGED */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .menu-toggle-btn:hover {
-    background: #AAD8F5; /* Lighter on hover */
+    background: var(--accent-color-hover); /* CHANGED */
     transform: scale(1.05);
 }
 
@@ -196,187 +359,179 @@ a:hover {
 .sidebar {
     position: fixed;
     top: 0;
-    right: -300px; /* Start off-screen to the right */
-    width: 300px; /* Fixed width, adjust as needed */
-    max-width: 80vw; /* Ensure it doesn't exceed 80% of viewport width on small screens */
-    height: 100vh; /* Full viewport height */
-    background-color: #2A4B7C; /* Galaxy Blue for sidebar background */
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-    z-index: 1000; /* Must be higher than normal content, lower than toggle button */
-    transition: right 0.4s ease-out; /* Smooth sliding transition */
-    overflow-y: auto; /* Enable scrolling if menu content is too long */
-    padding-top: 60px; /* Space for close button */
-    padding-bottom: 20px; /* Padding at bottom */
-    text-align: left; /* Align menu items to the left */
+    right: -300px;
+    width: 300px;
+    max-width: 80vw;
+    height: 100vh;
+    background-color: var(--container-bg); /* CHANGED */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1); /* CHANGED */
+    z-index: 1000;
+    transition: right 0.4s ease-out;
+    overflow-y: auto;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    text-align: left;
+    border-left: 1px solid var(--container-border);
+    display: block; 
 }
 
-/* State when the sidebar is open */
 .sidebar.is-open {
-    right: 0; /* Slide into view */
+    right: 0;
 }
 
-/* Close button inside the sidebar */
 .sidebar .close-btn {
     position: absolute;
     top: 15px;
     right: 15px;
     background: none;
     border: none;
-    color: #fbf9f9; /* White color for the 'x' icon */
+    color: var(--text-color-secondary); /* CHANGED */
     font-size: 2rem;
     cursor: pointer;
     transition: color 0.3s ease;
-     z-index: 1002; /* Ensure it's above menu items if they overlap */
+     z-index: 1002;
 }
 
 .sidebar .close-btn:hover {
-    color: #AAD8F5; /* Lighter on hover */
+    color: var(--accent-color);
 }
 
-/* Navigation list and links inside the sidebar */
 .sidebar ul {
-    list-style: none; /* Remove bullet points */
+    list-style: none;
     padding: 0;
     margin: 20px 0;
 }
 
 .sidebar li a {
-    display: block; /* Make links fill the width for easier clicking */
+    display: block;
     padding: 15px 25px;
-    color: #fbf9f9; /* White text for links */
+    color: var(--text-color); /* CHANGED */
     text-decoration: none;
     font-size: 1.2rem;
+    font-family: var(--font-sans); /* CHANGED */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar li a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Slight highlight on hover */
-    color: #8DC2E1; /* Endless Blue on hover */
+    background-color: var(--background-color); /* CHANGED */
+    color: var(--accent-color);
 }
 
-/* Optional: Overlay/backdrop that dims the background */
 .sidebar-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 999; /* Below the sidebar, above content */
-    opacity: 0; /* Hidden initially */
-    visibility: hidden; /* Hide completely when not visible */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+    display: block; 
 }
 
-/* State when the overlay is visible */
 .sidebar-overlay.is-visible {
-    opacity: 1; /* Fade in */
-    visibility: visible; /* Make visible */
+    opacity: 1;
+    visibility: visible;
 }
-
-/* --- Responsive Adjustments (Optional, but Recommended) --- */
-@media (min-width: 768px) {
-    /* On larger screens, maybe the menu is always visible or positioned differently */
-    /* Or you might just keep the current fixed-width sidebar for desktop too */
-}
-
 
 /* --- Basic Figure Styling --- */
 figure {
-    margin: 0; /* Remove default browser margins for figure */
+    margin: 0;
     padding: 0;
-    text-align: center; /* Center the caption */
-    font-size: 0.9em; /* Smaller font for captions */
-    color: #ccc; /* Lighter color for captions */
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle border around the figure */
-    padding: 10px; /* Optional: padding inside the figure container */
-    background-color: rgba(0, 0, 0, 0.1); /* Optional: subtle background for the figure */
-    border-radius: 5px; /* Optional: rounded corners */
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--text-color-secondary); /* CHANGED */
+    border: 1px solid var(--container-border);
+    padding: 10px;
+    background-color: var(--background-color); /* CHANGED */
+    border-radius: 5px;
 }
 
-/* --- Image Sizing within the Figure --- */
 figure img {
-    max-width: 100%; /* Important: Makes the image responsive and fit its parent <figure> */
-    height: auto;    /* Maintains aspect ratio */
-    display: block;  /* Removes extra space below image often created by inline elements */
-    margin: 0 auto 5px auto; /* Centers image if figure is wider, adds space below image before caption */
-    border-radius: 3px; /* Optional: slightly rounded corners for the image itself */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 5px auto;
+    border-radius: 3px;
 }
 
-/* --- Caption Styling --- */
 figcaption {
-    margin-top: 5px; /* Space between image and caption */
+    margin-top: 5px;
 }
 
 /* --- Text Wrapping (Floating) Classes --- */
-
-/* Float to the right with margin */
 .float-right {
-    float: right; /* Pushes the figure to the right */
-    width: 40% ; /* Use a percentage for the width (e.g., 40% of its parent container) */
-    max-width: 350px; /* Optional: set a maximum pixel width even if percentage is larger */
-    /* Alternatively, use a percentage for more responsiveness: width: 40%; */
-    margin: 0 0 10px 20px; /* Top, Right, Bottom, Left margins.
-                              '20px' on the left creates space between image and wrapping text. */
+    float: right;
+    width: 40% ;
+    max-width: 350px;
+    margin: 0 0 10px 20px;
 }
 
-/* Float to the left with margin */
 .float-left {
     float: left;
-    width: 40%; /* Use a percentage for the width */
-    max-width: 350px; /* Optional: set a maximum pixel width */
+    width: 40%;
+    max-width: 350px;
     margin: 0 20px 10px 0;
 }
 
-/* --- Clearing Floats (Important for subsequent content) --- */
-/* If you have content *after* the wrapping text that you want to start *below* the floated image,
-   you need to clear the float. The easiest way is to add a div with `clear: both;`
-   right after the last paragraph that wraps around the image. */
 .clear-float {
     clear: both;
-    height: 0; /* Don't add extra space */
-    visibility: hidden; /* Hide the div itself */
+    height: 0;
+    visibility: hidden;
 }
 
-/* Alternatively, for a parent container that holds floated items and wants to self-clear: */
-/* .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-/* Then apply .clearfix to the parent container of your figure and wrapping paragraphs. */
-
-/* --- Responsive Adjustments for Smaller Screens (Phones) --- */
-/* This media query will apply when the screen width is 600px or less */
+/* --- Responsive Adjustments for Floating --- */
 @media (max-width: 600px) {
     .float-right,
     .float-left {
-        float: none; /* Disable the float */
-        width: 90%; /* Make the figure take up most of the screen width, but leave some side padding */
-        margin: 10px auto; /* Center the block and add top/bottom margin */
-        text-align: center; /* Ensure caption/content inside is centered */
+        float: none;
+        width: 90%; 
+        margin: 10px auto;
+        text-align: center;
     }
 }
 
 /* --- Footer --- */
 footer {
-    background-color: var(--dark-bg);
-    color: #fff;
+    background-color: var(--footer-bg);
+    color: #e0e0e0; /* CHANGED: Softer white */
     text-align: center;
     padding: 30px 0;
     font-size: 0.9em;
     margin-top: 50px;
+    border-top: 1px solid #555; /* CHANGED: Darker border */
 }
 
 footer a {
-    color: var(--primary-color);
+    color: #ffffff; /* CHANGED: Bright white */
+    font-weight: bold;
 }
 
 footer a:hover {
-    color: #0056b3;
+    color: var(--accent-color); /* CHANGED: Use accent on hover */
 }
 
-/* --- Responsive Adjustments (Media Queries) --- */
+/* --- Responsive Menu Switch --- */
+@media (min-width: 769px) {
+    .top-nav {
+        display: block;
+    }
+    .menu-toggle-btn {
+        display: none;
+    }
+    .sidebar {
+        display: none;
+    }
+    .sidebar-overlay {
+        display: none;
+    }
+    body.no-scroll {
+        overflow-y: auto; 
+    }
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.2em;
@@ -384,38 +539,22 @@ footer a:hover {
     .tagline {
         font-size: 1em;
     }
-    nav ul {
-        flex-direction: column; /* Stack nav items on small screens */
-        gap: 10px; /* Reduce gap */
-    }
-    nav ul li {
-        margin: 0; /* Remove horizontal margin */
-    }
-    main section {
-        padding: 40px 0; /* Reduce section padding */
-    }
     .container {
-        padding: 5px 10px; /* Reduce container padding */
+        padding: 5px 10px;
     }
 }
 
 /* --- Contact Icons Styling --- */
 .contact-icons a {
-    color: #fbf9f9; /* Icon color */
+    color: #f8f9fa; /* CHANGED: Softer white */
     margin: 0 15px;
     font-size: 1.8rem;
-    transition: color 0.3s ease; /* Smooth transition for hover */
+    transition: color 0.3s ease;
     text-decoration: none;
-    transform: scale(1.05);
 }
 
 .contact-icons a:hover {
-    color: #8DC2E1; /* Change color on hover */
+    color: #ffffff; /* CHANGED: Brighter white */
     text-decoration: none;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
-
-
-
-
-

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css?v=1.1"> 
+</head>
+<body>
+
+    <header>
+        <h1>Eric T. Wolf, Ph.D. </h1>
+        <p class="tagline"> numerical modeling | research | data </p> 
+    </header>
+    
+    <button id="menu-toggle-btn" class="menu-toggle-btn" aria-label="Open navigation menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    <nav id="sidebar-menu" class="sidebar"> <button class="close-btn" aria-label="Close navigation menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="science.html">science</a></li>
+            <li><a href="publications.html">publications</a></li>  
+            <li><a href="aboutme.html">about me</a></li>
+        </ul>
+    </nav>
+    
+    <div id="sidebar-overlay" class="sidebar-overlay"></div>
+
+
+    <main>
+        <section id="Science" class="container">
+            <h2>science</h2> 
+            
+            <hr> <h3>ExoCAM and ExoRT, Open-Source Tools for Planetary Climate Modeling and Radiative Transfer</h3>
+            
+            <figure class="float-right">
+                <img src="/images/exocam_plot.jpg" alt="A climate simulation from ExoCAM showing global temperature patterns on an exoplanet.">
+                <figcaption>A simulation from ExoCAM showing surface temperatures on a tidally-locked exoplanet.</figcaption>
+            </figure>
+
+            <p>Answering big questions about planetary climate requires powerful, flexible tools. Standard climate models are built for Earth, 
+            but what about planets with different atmospheres, orbits, or stars?</p>
+            
+            <p>I am the primary developer and maintainer of <strong>ExoCAM</strong>, an open-source 3D climate model built upon the National Center for 
+               Atmospheric Research's (NCAR) Community Earth System Model (CESM). ExoCAM is designed to simulate the climates of a vast range of worlds, 
+               from ancient Earth to distant exoplanets orbiting other stars.</p>
+            
+            <p> At the core of ExoCAM is <strong>ExoRT</strong>, a flexible two-stream correlated-K radiative transfer model.</p>
+
+            <p>ExoCAM and ExoRT are publicly available community tools that are used by numerous research groups worldwide. My focus is on 
+               developing robust, open-source software that empowers the entire field of planetary science. You can read the primary paper on ExoCAM here:</p>
+
+            <div class="clear-float"></div> </section>
+
+        <section id="explorer" class="container">
+            <h3> Exploring the Limits of Habitability</h3>
+            
+            <figure class="float-left">
+                <img src="/images/trappist1_planets.jpg" alt="An artist's concept of the TRAPPIST-1 system, showing multiple rocky planets orbiting a red dwarf star.">
+                <figcaption>Artist's concept of the TRAPPIST-1 system, a key target for habitability studies.</figcaption>
+            </figure>
+
+            <p>What makes a planet capable of supporting life? My research uses the tools I build, like ExoCAM, to map the "habitable zone" 
+               and understand what newly discovered planets might actually look like.</p>
+            
+            <p>By simulating these alien environments in 3D, we can move beyond simple definitions of habitability. I've explored the climates of 
+               key targets like the **TRAPPIST-1** system, the resilience of habitable climates on planets in **circumbinary star systems** (like Tatooine),
+               and the fundamental physics that sets the **"inner edge"** of the habitable zone—the point where a planet's oceans would boil away.</p>
+
+            <div class="clear-float"></div> </section>
+
+        <section id="timetraveler" class="container">
+            <h3> Our Planet's Alien Past (and Future)</h3>
+            
+            <figure class="float-right">
+                <img src="/images/pale_orange_dot.jpg" alt="An artist's concept of the Archean Earth, showing a hazy, orange-tinted sky and simple land masses.">
+                <figcaption>Artist's concept of the "Pale Orange Dot"—the Archean Earth with a fractal organic haze.</figcaption>
+            </figure>
+
+            <p>Long before humans, Earth itself was an "alien" world. For billions of years, life existed under a Sun that was up to 25% fainter than it is today. 
+               How did life survive, and what did our planet look like?</p>
+            
+            <p>My foundational research investigated this **"Faint Young Sun Paradox."** I used climate models to show that **fractal organic hazes**, similar to 
+               those on Saturn's moon Titan, could have formed in the Archean atmosphere. These hazes would have provided a critical UV shield for early life while 
+               still allowing the planet to stay warm—transforming the early Earth into a "Pale Orange Dot." </p>
+
+            <div class="clear-float"></div> </section>
+
+            <section id="future-research" class="container">
+            <h3> What's Next? Current & Future Research</h3>
+            
+            <p>Science is always moving. My current work is focused on bridging the gap between our theoretical models and the first-ever observations of terrestrial exoplanets from telescopes like the James Webb Space Telescope (JWST).</p>
+
+            <p>I am leading a multi-model collaboration to interpret potential observations of the well-known **TRAPPIST-1e** system. By comparing the results from many different climate and chemistry models, we can better understand what we are *really* seeing and provide a more robust interpretation of a planet's atmosphere.</p>
+
+            <p>My future research will dive deeper into one of the most complex and important topics in planetary climate: **atmospheric hazes**.  With new funding from NASA, my next major project will explore how hazes form on planets orbiting different types of stars. This work will help us understand how hazes affect a planet's climate and, critically, how they would influence its observable spectrum.</p>
+
+            </section>
+    </main>
+
+    <footer id="contact">
+            <div class="contact-icons">  
+                <a href="mailto:storyofthewolf@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/eric-wolf-15a062169/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a  href="https://github.com/storyofthewolf" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.strava.com/athletes/12672550" target="_blank" rel="noopener noreferrer" aria-label="Strava Profile">
+                    <i class="fab fa-strava"></i>
+                </a>
+            </div>
+            <p>&copy; <span id="current-year"></span> Eric Wolf. All rights reserved.</p>
+        <script>
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+    <script src="script.js"></script>
+   
+</body>
+</html>

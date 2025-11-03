@@ -1,0 +1,392 @@
+/* --- Global Styles --- */
+/* Import a modern font from Google Fonts (e.g., Lato, Open Sans, Roboto) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Roboto+Mono&display=swap');
+
+:root { /* CSS Variables for easy theme changes */
+    /* === NEW "Techno-Sophisticate" Palette === */
+    --accent-color: #00FFFF; /* Electric Cyan */
+    --text-color: #e0e0e0; /* Soft white for body text */
+    --text-color-dark: #a0a0a0; /* Muted gray for secondary text */
+    --header-bg: rgba(0, 0, 0, 0.3); /* Transparent black for header */
+    --footer-bg: #0a0a14; /* Deep, near-black for footer */
+    --container-bg: rgba(20, 25, 40, 0.7); /* Dark semi-transparent container */
+    --container-border: rgba(0, 255, 255, 0.2); /* Faint cyan border */
+
+    /* Fonts */
+    --font-sans: 'Lato', sans-serif;
+    --font-mono: 'Roboto Mono', monospace;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden; 
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.0;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    scroll-behavior: smooth;
+    
+    /* === NEW "Mountain Psychonaut" Background === */
+    /* A darker, deeper, more cosmic gradient */
+    background: linear-gradient(
+        180deg,          
+        #0d1117,         /* GitHub Dark */
+        #1D2B4A,         /* Deep Indigo */
+        #111111          /* Near Black */
+    );
+    background-size: 400% 400%;
+    animation: gradientShift 30s ease infinite alternate;
+    background-color: #111111; /* Fallback */
+}
+
+body.no-scroll {
+    overflow-y: hidden;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* --- Header --- */
+header {
+    padding: 20px;
+    background-color: var(--header-bg);
+    color: #fbf9f9;
+    border-bottom: 1px solid var(--container-border); /* Sharp separator */
+}
+
+h1 {
+    /* === "Techno" Font === */
+    font-family: var(--font-mono);
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: center;
+    color: inherit;
+    font-weight: 700;
+}
+
+.tagline {
+    /* === "Techno" Sub-heading === */
+    font-family: var(--font-mono);
+    font-size: 1.1em;
+    color: var(--text-color-dark);
+    margin-top: 10px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase; /* Classic techno style */
+    letter-spacing: 1.5px;
+}
+
+
+/* --- Main Sections --- */
+main {
+    padding: 10px 10px;
+    min-height: calc(100vh - 120px);
+    display: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 960px;
+    margin: auto auto;
+    padding: 15px 25px; /* More padding */
+    /* === "Glass Pane" Look === */
+    background-color: var(--container-bg);
+    border-radius: 8px; /* Slightly sharper edges */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* === "Techno" Border === */
+    border: 1px solid var(--container-border);
+}
+
+main section {
+    margin-bottom: 25px; /* Space between containers */
+}
+
+
+h2 {
+    /* === "Techno" Font === */
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    color: var(--accent-color); /* Bright accent color */
+    font-style: normal; /* Remove italic */
+}
+
+h3 {
+    /* === "Techno" Font === */
+    font-family: var(--font-mono);
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: 400;
+}
+
+
+
+/* --- Text elements --- */
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+ul, ol {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 10px;
+    line-height: 1.5; /* Better spacing for lists */
+}
+
+a {
+    color: var(--accent-color); /* Bright accent color */
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff; /* Bright white on hover */
+    text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--container-border);
+    margin: 20px 0;
+}
+
+/* --- Publication List Specifics --- */
+#Publications ul li {
+    padding-left: 3em; 
+    text-indent: -3em;  
+    list-style-type: none; /* Remove bullet points */
+}
+
+
+/* --- Menu Toggle Button (Mobile) --- */
+.menu-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001; 
+    background: var(--accent-color); /* Bright accent */
+    color: #000000; /* Black icon */
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3); /* Neon glow */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.menu-toggle-btn:hover {
+    background: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Styles for the slide-out sidebar menu */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    max-width: 80vw;
+    height: 100vh;
+    background-color: #0d1117; /* Dark sidebar */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: right 0.4s ease-out;
+    overflow-y: auto;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    text-align: left;
+    border-left: 1px solid var(--container-border);
+}
+
+.sidebar.is-open {
+    right: 0;
+}
+
+/* Close button inside the sidebar */
+.sidebar .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fbf9f9;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+     z-index: 1002;
+}
+
+.sidebar .close-btn:hover {
+    color: var(--accent-color);
+}
+
+/* Navigation list and links inside the sidebar */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar li a {
+    display: block;
+    padding: 15px 25px;
+    color: #fbf9f9;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: var(--font-mono); /* Techno font in menu */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar li a:hover {
+    background-color: rgba(0, 255, 255, 0.1); /* Accent color highlight */
+    color: var(--accent-color);
+}
+
+/* Overlay/backdrop */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-out, visibility 0.4s ease-out;
+}
+
+.sidebar-overlay.is-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Basic Figure Styling --- */
+figure {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--text-color-dark); /* Muted caption */
+    border: 1px solid var(--container-border);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 5px auto;
+    border-radius: 3px;
+}
+
+figcaption {
+    margin-top: 5px;
+}
+
+/* --- Text Wrapping (Floating) Classes --- */
+.float-right {
+    float: right;
+    width: 40% ;
+    max-width: 350px;
+    margin: 0 0 10px 20px;
+}
+
+.float-left {
+    float: left;
+    width: 40%;
+    max-width: 350px;
+    margin: 0 20px 10px 0;
+}
+
+.clear-float {
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+/* --- Responsive Adjustments for Smaller Screens --- */
+@media (max-width: 600px) {
+    .float-right,
+    .float-left {
+        float: none;
+        width: 90%; 
+        margin: 10px auto;
+        text-align: center;
+    }
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--footer-bg);
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+    margin-top: 50px;
+    border-top: 1px solid var(--container-border);
+}
+
+footer a {
+    color: var(--accent-color);
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+/* --- Responsive Adjustments (Media Queries) --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+    .tagline {
+        font-size: 1em;
+    }
+    main section {
+        padding: 0; /* Remove padding */
+    }
+    .container {
+        padding: 5px 10px;
+    }
+}
+
+/* --- Contact Icons Styling --- */
+.contact-icons a {
+    color: #fbf9f9;
+    margin: 0 15px;
+    font-size: 1.8rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.contact-icons a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
+}
